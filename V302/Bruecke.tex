@@ -1,0 +1,236 @@
+\section{Zielsetzung}
+Im Versuch werden unbekannte Widerstände, Induktivitäten und Kapazitäten mittels
+grundlegender Brückenschaltungen ermittelt.
+
+\section{Theorie}
+Brückenschaltungen kommen in der Messtechnik häufig zum Einsatz, da sie sehr genaue
+Messergebnisse liefern.
+Eine prinzipielle Brückenschaltung ist in \ref{Abb1} zu sehen.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Bruecke1.PNG}
+  \caption{Abbildung einer prinzipiellen Brückenschaltung \cite{Quelle}}
+  \label{Abb1}
+\end{figure}
+\FloatBarrier
+
+\noindent Zwischen den beiden stromdurchflossenen Leitern wird an der Stelle A
+und B in \ref{Abb1} eine Potentialdifferenz, die auch als Brückenspannung bezeichnet
+wird, gemessen. Verschwindet diese Brückenspannung auf Grund entsprechend eingestellter
+Widerstände $R_1 \symup{bis} R_4$, so wird die Brücke als abgeglichen bezeichnet.
+Mittels der Kirchoff´schen Gesetze
+\begin{align*}
+  \sum{I_\symup{k}} &= 0 \\
+  \sum{U_\symup{k}} &= 0
+\end{align*}
+ergeben sich folgende Bedingungen für Ströme und Spannung:
+\begin{align*}
+  I_1 = I_2 &\, I_3 = I_4 \\
+  U = I_1 R_1 + I_3 R_3 &\, -U = -I_2 R_2 + I_4 R_4 .
+  \end{align*}
+  Diese Gleichungen und die Gleichung für die Speisespannung
+\begin{align*}
+  U_\symup{s} = I_1 (R_1 + R_2)
+\end{align*}
+ergeben folgenden Zusammenhang für die Brückenspannung $U$:
+\begin{equation*}
+  U = \frac{R_2 R_3 - R_1 R_4}{(R_3 + R_4)(R_1 + R_2)} U_\symup{s} .
+\end{equation*}
+Damit die Brückenschaltung als abgeglichen gilt, muss folglich gelten:
+\begin{align}
+  R_2 R_3 = R_1 R_4
+\end{align}
+Da dieser Zusammenhang lediglich vom Verhältnis der Widerstände zueinander und nicht
+von $U_\symup{s}$ abhängig ist, kann damit leicht ein unbekannter Widerstand bestimmt
+werden, solange die drei anderen bekannt sind.
+Wenn in einer Brückenschaltung nicht nur Ohm´sche Widerstände verbaut sind, sondern
+auch Kapazitäten und Induktivitäten, so werden Widerstände komplex dargestellt:
+\begin{align*}
+  X + iY = Z .
+\end{align*}
+Das macht aus Gleichung (1):
+\begin{align*}
+  Z_2 Z_3 = Z_1 Z_4
+\end{align*}
+Hierbei wird X als Wirkswiderstand und Y als Blindwiderstand bezeichnet. Auf Grund
+der Tatsache, dass zwei komplexe Zahlen gleich sind, wenn deren Imaginär- und Realteil
+gleich sind, muss folglich gelten:
+\begin{align}
+  X_2 X_3 - Y_2 Y_3 &= X_1 X_4 - Y_1 Y_4 \\
+  X_1 Y_4 + X_4 Y_1 &= X_2 Y_3 + X_3 Y_2
+\end{align}
+
+\subsection{Wheatstone´sche Brückenschaltung}
+Die Wheatstone´sche Brückenschaltung ist in \ref{Abb2} zu sehen und dient zur
+Ermittlung den unbekannten Widerstandes $R_\symup{x}$. Hier sind ausschließlich Ohm´sche
+Widerstände verbaut, weshalb die Schaltung sowohl mit Gleich- als auch mit
+Wechselstrom betrieben werden kann, solange darauf geachtet wird, dass der Nullindikator
+der Stromart entsprechend gewählt wird.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Wheat.PNG}
+  \caption{Wheatstone´sche Brückenschaltung \cite{Quelle}}
+  \label{Abb2}
+\end{figure}
+\FloatBarrier
+
+\noindent Da es hier lediglich auf das Verhältnis zwischen $R_3 / R_4$ ankommt, kann
+an dieser Stelle ein Potentiometer verwendet werden.
+Mit Hilfe von (1) ergibt sich folgende Formel für den unbekannte Widerstand
+$R_\symup{x}$ :
+\begin{align*}
+  R_\symup{x} = R_2 \frac{R_3}{R_4} .
+\end{align*}
+
+\subsection{Kapazitätsmessbrücke}
+Der komplexe Widerstand eines realen Kondensators ist:
+\begin{align*}
+  Z = R - \frac{i}{\omega C}
+\end{align*}
+Eine Brückenschaltung zur Bestimmung einer unbekannten Kapazität ist in \ref{Abb3}
+zu sehen. Hier muss beachtet werden, dass sich hinter der unbekannten Kapazität
+noch ein unbekannter Ohm´scher Widerstand befindet, der eine Phasenverschiebung
+verursachen würde. Folglich müssen in der Schaltung zwei voneinander unabhängige
+veränderliche Widerstände eingebaut werden. In der Graphik sind diese $R_2$ und das
+Potentiometer für $R_3$ und $R_4$.
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Kapa.PNG}
+  \caption{Kapazitätsmessbrücke \cite{Quelle}}
+  \label{Abb3}
+\end{figure}
+Zum Bestimmen des unbekannten Widerstandes $R_\symup{x}$ und der unbekannten Kapazität
+$C_\symup{x}$ gelten die Gleichungen:
+\begin{align*}
+  R_\symup{x} &= R_2 \frac{R_3}{R_4} \\
+  C_\symup{x} &= C_2 \frac{R_4}{R_3} .
+\end{align*}
+\FloatBarrier
+
+\subsection{Induktivitätsmessbrücke}
+Der Aufbau einer Indutkivitätsmessbrücke ist analog zu dem der Kapzitätsmessbrücke. Ein
+Teil der elektromagnetischen Feldenergie der Spule geht in Form von Wärme verloren.
+Das Ersatzschaltbild einer solchen realen Induktivität ist eine ideale Induktivität
+in Reihe geschaltet mit einem unbekannten Widerstand. Analog zur Messung der
+unbekannten Kapazität, sind auch hier zwei voneinander unabhängig regelbare Widerstände
+verbaut. Im Schaltbild \ref{Abb4} sind dies zum einen $R_2$ und zum anderen das
+Potentiometer zur Bestimmung von $R_3$ und $R_4$. Der komplexe Widerstand einer realen
+Spule ist:
+\begin{align*}
+  Z = R + i \omega L
+\end{align*}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Indu.PNG}
+  \caption{Induktivitätsmessbrücke \cite{Quelle}}
+  \label{Abb4}
+\end{figure}
+\FloatBarrier
+
+\noindent Zur Bestimmung des unbekannten Widerstandes und der unbekannten Induktivität
+gelten Folgende Gleichungen:
+\begin{align*}
+  R_\symup{x} &= R_2 \frac{R_3}{R_4} \\
+  L_\symup{x} &= L_2 \frac{R_3}{R_4}
+\end{align*}
+
+\subsection{Maxwell-Brücke}
+Die Maxwellbrücke stellt eine Alternative zur Bestimmung einer unbekannten Induktivität
+dar. Die reale Induktivität wird auch hier wieder als Ersatzschaltung aus einer idealen
+Induktivität und einem unbekannten Widerstand, die in Reihe geschaltet sind dargestellt.
+Im Unterschied zur Induktivitätsmessbrücke ist hier anstelle der zweiten bekannten Induktivität
+eine möglichst verlustarme Kapazität $C_4$ parallel zu $R_2$ geschaltet.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Max.PNG}
+  \caption{Maxwellbrückenschaltung zur Bestimmung einer unbekannten Induktivität \cite{Quelle}}
+  \label{Abb5}
+\end{figure}
+\FloatBarrier
+Für den Widerstand der unbekannten Induktivität gilt:
+\begin{align*}
+  Z_\symup{x} = R_\symup{x} + i \omega L_\symup{x} \frac{1}{Z_4} .
+\end{align*}
+Des weiteren gilt für die eingebaute Kapazität $C_4$ :
+\begin{align*}
+  \frac{1}{Z_4} = \frac{1}{R_4} + i \omega C_4 .
+\end{align*}
+Nun müssen zur Bestimmung des unbekannten Widerstandes und der unbekannten Indutkivität
+die komplexen Abgleichbedingungen (2) und (3) beachtet werden:
+\begin{align*}
+  R_\symup{x} &= R_2 \frac{R_3}{R_4} \symup{und} \\
+  L_{x} &= R_2 R_3 C_4
+\end{align*}
+\subsection{Wien-Robinson-Brücke}
+Die Wien-Robinson-Brücke ist im Gegensatz zu den zuvor beschriebenen Brücken
+frequenzabhängig. In \ref{Abb6} ist eine solche Brückenschaltung dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{Wien.PNG}
+  \caption{Schaltbild einer Wien-Robinson-Brücke \cite{Quele}}
+  \label{Abb6}
+\end{figure}
+In der Schaltung werden keine Abgleichelemente verbaut. Hier wird das Verhältnis
+der Brückenspannung zur Speisespannung betrachtet, für welches folgende Gleichung
+gilt:
+\begin{align*}
+  \left|\frac{U_\symup{Br}}{U_\symup{s}} \right|^2 = \frac{\left(1 - (\omega R C)^2\right)^2}{9 \left( 1 - (\omega R C)^2\right)^2 + 81(\omega R C)^2}
+\end{align*}
+An der Formel lässt sich erkennen, dass die Brückenspannung bei $\omega_0 = \frac{1}{RC}$
+verschwindet und die Brücke damit abgeglichen ist.
+Die Wien-Robinson-Brücke dient als Frequnezfilter, was aus der obigen Gleichung nicht
+direkt zu erkennen ist. Wird in dieses Verhältnis $\Omega := \frac{\omega}{\omega_0}$
+eingebracht, so ist die Frequenzfiltereigenschaft der Brücke deutlch zu erkennen:
+\begin{align*}
+  \left|\frac{U_\symup{Br}}{U_\symup{s}} \right|^2 = \frac{1}{9} \frac{\left(1 - \Omega^2\right)^2}{\left(1 - \Omega^2\right)^2 + 9\Omega^2}
+\end{align*}
+
+\section{Durchführung}
+Zur Durchführung des Versuchs werden die in der Theorie beschriebenen Brückenschaltungen,
+ein Oszilloskop zur Messung der Brückenspannung, sowie ein Funktionengenerator, der die
+Brückenschaltungen mit einer Sinusspannung versorgt, benötigt.
+
+\subsection{Wheatstonebrücke}
+Mit Hilfe der Wheatstonebrücke werden die unbekannten Widerstände "Wert 14" und "Wert 12"
+bestimmt. Für das Verhältnis zwischen $R_3 \symup{und} R_4$ wird ein Potentiometer verwendet.
+Es werden drei Messungen durchgeführt, mit jeweils unterschiedlichem $R_2$, um den Fehler
+zu bestimmen. Bei jeder der Messungen gilt es, das Potentiometer so einzustellen, dass auf dem
+Oszilloskop eine Nullinie zu erkennen ist.
+
+\subsection{Kapazitätsmessbrücke}
+Mit der kapazitätsmessbrücke werden verschiedene unterschiedliche Kapazitäten "Wert 13",
+"Wert 1" und "Wert 8" bestimmt. Das Vorgehen zur Fehlerermittlung erfolgt analog zur
+Wheatstonebrücke, es werden drei Messungen, mit jeweils unterschiedlicher Kapazität
+$C_2$ durchgeführt, bei denen das Potentiometer stets so eingestellt wird, dass im
+Oszilloskop eine Nullinie zu erkennen ist. Zu beachten ist, dass zur Bestimmung verlustbehafteter
+Kapazitäten, ein variabler Widerstand $R_2$ verwendet werden muss, der alternierend
+mit dem Potentiometer für $R_3 \symup{und} R_4$ verändert wird, um auf dem Oszilloskop
+die Nullinie zu erzeugen.
+
+\subsection{Induktivitätsmessbrücke}
+Die Induktivitätsmessbrücke wird verwendet, um die verlustbehaftete Spule "Wert 17" zu bestimmen.
+Auch hier ist $R_2$ ein regelbarer Widerstand und für $R_3 \symup{und} R_4$
+wird ein Potentiometer verwendet. Wieder wird sich der Darstellung der Nullinie
+auf dem Oszilloskop angenähert, indem $R_2$ und das Potentiometer alternierend geändert werden.
+
+\subsection{Maxwell-Brücke}
+Um die Maxwell-Brücke mit der Induktivitätsmessbrücke vergleichen zu können, wird anschließend
+"Wert 17" noch einmal mit der Maxwell-Brücke bestimmt. Hier wird ein fixer Widerstand $R_2$
+für drei unterschiedliche Messungen variiert, um den Fehler bei der messung zu ermitteln. Das
+Potentiometer für $R_3 \symup{und} R_4$ bleibt auch hier bestehen.
+
+\subsection{Wien-Robinson-Brücke}
+Mit der Wien-Robinson-Brücke wird die Frequenzabhänhgigkeit der Brückenspannung untersucht.
+Dafür wird die Frequenz der Speisespannung für 30 Werte zwischen \SI{20}{\Hz} und \SI{30}{\kilo\Hz}
+variiert und die Brückenspannung abgelesen. Hierfür ist es sinnvoll, zunächst $\omega_0$ zu
+ermitteln, um in diesem Bereich mehrere kleine Frequenzänderungen vorzunehmen.
+Mit Hilfe der gemessenen Werte wird schließlich der Klirrfaktor bestimmt, welcher ein Maß für
+die Qualität der Sinusschwingung ist.
+
+\newpage
+\nocite{*}
+\printbibliography

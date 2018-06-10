@@ -1,0 +1,229 @@
+\section{Zielsetzung}
+
+\section{Theorie}
+Ein Schwingkreis besteht im einfachsten Fall aus einem Kondensator mit einer Kapazität $C$ und einer Spule mit der Induktivität $L$.
+Die Energie in diesem System oszilliert zwischen dem elektrischen Feld des Kondensators und dem magnetischen Feld der Spule.
+Falls ein idealer Draht vorliegt, bleibt diese \textbf{ungedämpfte Schwingung} für $ t \to \infty $ unverändert.
+
+\subsection{Gedämpfte Schwingung}
+Wenn  in dem Schwingkreis noch ein endlicher Widerstand $R$ eingebaut ist, dann wird dies als \textbf{gedämpft Schwingung}
+bezeichnet, denn hier geht Energie in Form von Wärme über den Draht oder den Widerstand verloren. Dadurch fallen die Amplituden
+der Schwingungen exponentiell ab.
+Der Abfall der Amplituden lässt sich aus dem zweiten Kirchhoffschen Gesetz (Maschenregel) mit Hilfe der Spannungen aus der Abbildung(???)
+herleiten:
+
+\begin{equation*}
+  U_R(t) + U_L(t) + U_C(t) = 0.
+\end{equation*}
+
+Mit den folgenden Definitionen der Spannung $U$, der Stromstärke $I$, der Induktivität der Spule $L$,
+der Kapazität des Kondensators $C$, der LAsung $Q$ des Kondensators und des Widerstandes $R$
+
+\begin{align*}
+  U_R(t) &= R I(t) \\
+  U_C(t) &= L \, \frac{\symup d I(t)}{\symup d t} \\
+  U_L(t) &= \frac{Q(t)}{C} \, ,
+\end{align*}
+
+lässt sich eine lineare Differentialgleichung 2. Ordnung aufstellen
+
+\begin{equation*}
+  \ddot{I}(t) + \frac{R}{L} \dot{I}(t) + \frac{1}{LC} I(t) = 0 \, .
+\end{equation*}
+
+Die Lösung der Differentialgleichung lautet
+
+\begin{equation*}
+  I'(t) = e^{-2 \pi \mu t} (A e^{i 2 \pi \nu t} + B e^{-i 2 \pi \nu t}) \, ,
+\end{equation*}
+
+wobei $A$ und $B$ beliebige komplexe Zahlen sind und die Abkürzungen wie folgt definiert werden
+
+\begin{align*}
+  2 \pi \mu &= \frac{R}{2L} \\
+  2 \pi \nu &= \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+\end{align*}
+
+Für den weiteren Verlauf ist es notwendig zu ermitteln, ob $\nu$ reel oder imaginär ist. Deshalb wird eine
+Fallunterscheidung durchgeführt:
+
+\begin{itemize}
+  \item $\nu $ ist reell, bzw. $\frac{1}{LC} > \frac{R^2}{4L^2}$
+
+  Damit $I'(t)$ reell wird, muss $A=\overline{B}$ gelten, so erhält man durch den Ansatz
+
+  \begin{align*}
+    A &= \frac{1}{2} A_0 e^{i \eta}\\
+    B &= \frac{1}{2} A_0 e^{-i \eta} \, ,
+  \end{align*}
+  wobei $A_0$ und $\eta$ reell sein sollen, die Funktion
+
+  \begin{equation*}
+    I(t) = A_0 e^{-2 \pi \mu t} cos(2 \pi \nu t + \eta).
+  \end{equation*}
+
+  Diese Gleichung stellt eine gedämpfte Schwingung mit der Freuquenz $\nu$ dar, dessen Amplitude exponentiell
+  abfällt, mit der Schwingungsdauer
+
+  \begin{equation*}
+    T = \frac{1}{\nu} = \frac{2 \pi}{\sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}}
+  \end{equation*}
+
+  Die Abnahmegeschwindigkeit lässt sich aus dem Exponenten der e-Funktion herleiten. Daraus lässt sich
+  die Abklingdauer $T_{\symup{ex}}$ definieren, als
+
+  \begin{equation*}
+    T_{\symup{ex}} := \frac{1}{2 \pi \mu} = \frac{2L}{R} \, .
+  \end{equation*}
+
+  \item $\nu $ ist imaginär, bzw. $\frac{1}{LC} < \frac{R^2}{4L^2}$
+
+  Es gibt keinen oszillatorischee Anteil mehr in der Gleichung (???-I'(t)), da nurnoch die reelle
+  Exponentialfunktion vorkommt. Es kommt zu einer aperiodischen Dämpfung. Abhängig von $A$ und $B$ strebt
+  $I(t)$ monoton gegen 0 oder erreicht noch einen Extremwert. Für das Experiment von Bedeutung ist nur
+  der Spezialfall
+
+  \begin{equation*}
+    \frac{1}{LC} = \frac{R^2}{4L^2}
+  \end{equation*}
+
+  hierbei geht die Funktion ohne Überschwingungen am schnellsten gegen 0.
+
+\end{itemize}
+
+\subsection{Erzwungene Schwingung}
+Nun wird der RCL-Kreis durch eine äußere periodische Schwingung mit einer Eigenfrequenz ergänzt,
+in diesem Fall mit einer sinusförmigen Wechselspannung $U(t)$, dies wird nun als \textbf{erzwungene Schwingung} bezeichnet.
+Nach einer gewissen Einschwingzeit wird der RCL-Kreis mit derselben Frequenz wie die Wechselstromquelle schwingen.
+Mit
+
+\begin{equation*}
+  U(t) = U_0 e^{i \omega t}
+\end{equation*}
+
+wird die Differentailgleichung noch ergänzt. Die Differentialgleichung nimmt dann die Gestalt an:
+
+\begin{equation*}
+  \label{DGL2}
+  L \dot{I}(t) + R I(t) + \frac{Q(t)}{C} = U_0 e^{i \omega t}
+\end{equation*}
+ bzw.
+ \begin{equation*}
+   \label{DGL3}
+   LC \ddot{U}_C + RC \dot{U}_C + U_C = U_0 e^{i \omega t}
+ \end{equation*}
+ wobei $Q(t)$ die Ladung auf dem Kondensator entsprich.
+
+ Um zu ermitteln, wie die Amplitude $U_{C_0}$ der Kondensatorspannung mit dem Phasenunterschied von der Erregerspannung
+ mit der Amplitude $U_0$ und ihrer Frequenz abhängen, nimmt man den Ansatz
+
+ \begin{equation*}
+   U_C(\omega t) = U_{C_0} (\omega) e^{i \omega t}
+ \end{equation*}
+
+ und setzt diese in die DGL (DGL3) ein, so erhält man für die Amplitude
+
+ \begin{equation}
+   \label{equation1}
+   U_{C_0} = \frac{U_0 (1 - LC \omega^2 - i \omega RC)}{(1 - LC \omega^2)^2 + \omega^2 R^2 C^2 S}
+ \end{equation}
+
+ und die Phasenverschiebung $\phi (\omega)$ zwischen $U_C(t)$ und $U(t)$
+
+ \begin{equation}
+ \label{winkel}
+   \phi(\omega) = \arctan \left(\frac{- \omega RC}{1 - LC \omega^2}\right)
+ \end{equation}
+
+Mit (???) erhält man für die Kondensatorspannung in Abhängigkeit von $\omega$ die sogenannte Resonanzkurve
+\begin{equation}
+  \label{omega}
+  U_C(\omega) = \frac{U_0}{\sqrt{(1-LC \omega^2)^2 + \omega^2 R^2 C^2}}
+\end{equation}
+
+Für die Frequenzen $\omega_1$ und $\omega_2$ bei denen die Phasenverschiebung genau $\frac{\pi}{2}$ bzw. $\frac{3 \pi}{4}$
+beträgt, gilt dann nach (???)
+
+\begin{equation*}
+  \omega_{1,2} = \pm \frac{R}{2L} + \sqrt{\frac{R^2}{4L^2} + \frac{1}{LC}}
+\end{equation*}
+
+Bei näherer Betrachtung der Gleichung \eqref{omega} ist zu erkennen, dass $U_C$ für $\omega \to \infty$ gegen 0 geht
+und für $\omega \to 0$ gegen die Erregeramplitude $U_0$ strebt. $U_C$ erreich aber auch bei einer bestimmten Frequenz
+ein Maximum, dieses Phänomen wird \textbf{Resonanz} bezeichnen. Die zugehörige Resonanzfrequenz lässt sich durch
+
+\begin{equation*}
+  \omega_{res} = \sqrt{\frac{1}{LC} + \frac{R^2}{2L^2}}
+\end{equation*}
+
+berechnen. Falls die Resonanzfrequenz ungefähr der Frequenz der Erregerspannung ($\omega_0 = \frac{1}{LC}$) entspricht, d.h.
+$ \frac{1}{LC} >> \frac{R^2}{2L^2} $, so wird dies als Schwache Dämpfung bezeichnet. Für diesen Fall wird $U_C$ um
+den Faktor
+
+\begin{equation*}
+  q = \frac{1}{\omega_0 RC}
+\end{equation*}
+
+ größer als $U_0$. $q$ wird auch als Güte bezeichnet. Die Breite der Resonanzkurve ist eine weitere wichtige Größe,
+ sie wird aus der Differenz der beiden Frequenzen $\omega_-$ und $\omega_+$ gewonnen. Wobei $\omega_-$ und $\omega_+$
+ die Eigenschaft besitzen, dass die zugehörigen Spannungen $U_C(\omega_-)$ und $U_C(\omega_+)$  um den Faktor
+ $\frac{1}{\sqrt{2}}$ kleiner sind, als das Maximum $U_C(\omega_{res})$ bei der Resonanzfrequenz.
+ Mit der Näherung
+
+ \begin{equation*}
+   \frac{R^2}{L^2} << \omega_0^2
+ \end{equation*}
+
+folgt für die Differenz der Frequenzen
+
+\begin{equation*}
+\omega_+ - \omega_- \approx \frac{R}{L}
+\end{equation*}
+
+ \section{Durchführung}
+
+ \begin{figure}[h]
+   \centering
+   \includegraphics[scale=0.2]{V354Aufbau.jpeg}
+   \caption{Versuchsaufbau}
+   \label{AufbauBild}
+ \end{figure}
+
+Der Versuchsaufbau ist in Abbildung \ref{AufbauBild} und in Abbildung (???) dargestellt. Auf Abbildung \ref{AufbauBild} ist auf der rechten
+Seite den Sinuswellengenerator erkenne, welcher mit dem Bauteil, in welchem der RCL-Schwingkreis eingebaut ist, verbunden
+ist. Von dem RCL-Schwingkreis geht außerdem eine Verbindung zu dem 1. Eingang des Oszilloskop, um dort die erzeugte Schwingung
+anzeigen zu können. Die zu erkennden Verbindung zwischen dem Sinuswellenenerator und dem Oszilloskop wird erst im späteren Verlauf
+des Versuchs hinzugefügt.
+
+Im ersten Teil des Versuchs soll die Zeitabhängigkeit der Amplitude einer gedämpften Schwingung untersucht und
+daraus den Dämpfungswiderstand ermittelt werden. Es wird für die Messung der kleinere von den beiden festen Widerständen
+angeschlossen. Hierzu wird eine Rechteckspannung durch den Sinusgenerator erzeugt
+und auf dem Oszilloskop sichtbar gemacht. Folgend werden alle Hoch- und Tiefpunkte in Abhängigkeit der Zeit vermessen
+und notiert.
+
+Im zweiten Teil des Versuchs soll der aperiodische Grenzfall der Schwingung ermittelt werden. Hierzu wird die Schaltung
+an den veränderbaren Widerstand angeschlossen, eine Rechteckspannung durch den Sinusgenerator erzeugt und auf dem
+Oszilloskop sichtbar gemacht. Zunächst wird der veränderbare Widerstand auf den höchstmglichen Wert gestellt. Danach
+wird der Widerstand verringert, bis eine erste Überschwingung zu erkennen ist. Daraufhin wird der Widerstand
+etwas vergrößert, sodass gerade keine Überschwingung mehr vorhanden ist. Der Wert des Widerstandes wird notiert.
+
+Der Aufbau der letzten beiden Versuchsteile ist identisch. Hierzu wird zusätzlich noch eine Verbindung von dem Sinuswellengenerator
+zu dem Oszilloskop hergestellt, um eine unveränderte Sinusschwingung anzeigen zu lassen. Der Sinuswellengenerator erzeugt
+bei beiden Teilen eine Sinusschwingung. Hierzu wird der größere von den beiden festen Widerständen angeschlossen.
+
+Zunächst wird die Abhängigkeit der Kondensatorspannung von der Frequenz gemessen. Hierzu werden Frequenzen im Bereich
+von 15kHz bis 60kHz in 5kHz-Schritten abgetastet und die jeweiligen Amplituden der Kondensatorspannungen abgemessen.
+Da die Amplitude der Vergleichsspannung immer gleich bleibt, wird diese zuvor einmal gemessen und die Verbindung
+kann im weiteren Verlauf vom Oszilloskop getrennt werden.
+In dem Bereich der größten Amplituden werden weitere Messungen durchgeführt, diesmal in 1kHZ-Schritten, um den Peak
+der Kondensatorspannung besser darstellen zu können.
+
+Im letzten Teil des Versuches wird die Abhängigkeit der Phasenverschiebung von der Frequenz ermittelt.
+Hierzu wird analog wie zuvor vorgegangen: Es werden Frequenzen im Beriech von 15kHz bis 60kHz abgetastet und die jeweilige
+Schwingungsdauer $T$ und die Phasenverschiebung der Kondensatorspannnung gemessen. Hierbei kann die Ausgangsspannung nicht
+vom Oszilloskop getrennt werden, da diese für die Messung der Phasenverschiebung notwendig ist. Wie im vorherigen Teil
+des Versuchs, werden auch im kritischen Bereich der Resonanzfrequenz weitere Messwerte in 1kHz-Schritten aufgenommen.
+
+\section{Auswertung}
+
+\section{Diskussion}

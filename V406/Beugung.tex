@@ -1,0 +1,119 @@
+\section{Zielsetzung}
+Im Versuch wird Licht als elektromagnetische Welle am Spalt gebeugt und anschließend das
+hinter dem Spalt entstehende Interferenzmuster untersucht. Es werden Spaltbreiten
+zweier Einzelspalten und die Spaltbreite eines Doppelspalts untersucht.
+
+\section{Theorie}
+Unter Beugung wird verstanden, dass Wellen an einem Hindernis abgelenkt werden und
+sich auf Grund dessen neue Wellenfronten nach dem Huygen'schen Prinzip bilden.
+Licht wird immer dann gebeugt, wenn es durch Öffnungen in Schirmen scheint, deren Breite
+etwas schmaler als der Strahldurchmesser des Lichtes ist.
+Es können dabei zwei Arten der Beugung beobachtet werden: Die Fresnel'sche und die
+Frauenhofer'sche Beugung.Beide Arten der Beugung sind schematisch in Abbildung \ref{abb1}
+zu sehen. Bei der Fresnel'schen Beugung ist der Abstand zwischen Lichtquelle und Öffnung
+und zwischen Öffnung und Bild endlich. Bei der Frauenhofer'schen Beugung hingegen sind diese
+Abstände unendlich groß. Dadurch sind die miteinander inteferierenden Lichtstrahlen parallel
+und werden im Gegensatz zur Fresnel'schen Beugung alle unter dem selben Winkel gebeugt.
+Da es mathematisch deutlich einfacher ist, wenn alle Lichtstrahlen unter dem selben Winkel
+gebeugt werden, wird im Versuch lediglich die Frauenhofer'sche Beugung betrachtet.
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{Strahlen.PNG}
+  \caption{Fresnel'sche und Frauenhofer'sche Beugung im Vergleich mit der geometrischen
+  Optik(gestrichelte Linien). \cite{Q1}}
+  \label{abb1}
+\end{figure}
+
+\FloatBarrier
+Die Frauenhofer'sche Beugung ist lediglich die mathematische Formulierung des Huygen'schen Prinzips,
+welches besagt, dass von jedem Punkt einer Wellenfront eine Elementarwelle ausgeht, die eine
+Kugelwelle ist. Diese Elementarwellen interferieren miteinander und deren Einhüllende ist die neue
+Wellenfront. Der Schwingungszustand am Beobachtungspunkt ergibt sich, wenn alle an diesem Punkt
+gleichzeitig eintreffenden Elementarwellen aufsummiert werden. Am Einzelspalt muss demnach über
+alle Strahlen summiert werden muss, die unter dem selben Winkel $\Phi$ gebeugt werden.
+Dabei beträgt die Feldstärke, der in z-Richtung einfallenden ebenen Welle:
+\begin{align*}
+  A(z,t) = A_0 \symup{exp}\left(i\left(\omega~t - \frac{2\pi~z}{\lambda}\right)\right)
+\end{align*}
+
+In Abbildung \ref{abb2} wird deutlich, dass der Phasenunterschied der einzelnen eintreffenden
+Lichtstrahlen
+\FloatBarrier
+\begin{align*}
+  \delta = \frac{2~\pi~s}{\lambda} = \frac{2~\pi~x~\symup{sin}(\varphi)}{\lambda}
+\end{align*}
+\FloatBarrier
+beträgt.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{phi.PNG}
+  \caption{Phasenbeziehung zweier eintreffender Lichtstrahlen bei der Frauenhofer'schen Beugung
+  am Spalt. \cite{Q1}}
+  \label{abb2}
+\end{figure}
+\FloatBarrier
+Um die Amplitude in $\varphi$ Richtung zu bekommen, wird über die gesamte Spaltbreite $b$ imtegriert,
+da die einfallenden Lichtsrahlen infenitessimal klein sind:
+
+\begin{align*}
+  B(z, t, \varphi) = A_0 \symup{exp}\left( i \left( \omega~t - \frac{2\pi~z}{\lambda} \right) \right) \symup{exp} \left( \frac{\pi~i~b \symup{sin}(\varphi)}{\lambda}\right) \frac{\lambda}{\pi~\symup{sin}(\varphi)}\symup{sin} \left(\frac{\pi~b~\symup{sin}(\varphi)}{\lambda} \right)
+\end{align*}
+
+\newpage
+Dabei werden nur reellwertige Faktoren betrachtet. Eine Amplitudenfunktion ist in Abbildung \ref{abb3} zu sehen.
+Aufgrund der sehr hohen Amplitude des einfallnden Lichts wird die zeitlich gemittelte Intensität des Lichts
+gemessen, welche sich mit Hilfe folgender Formel berechnen lässt:
+\FloatBarrier
+\begin{align*}
+  I(\varphi) \propto B(\varphi)^2 = A_0^2~b^2 \left(\frac{\lambda}{\pi~\symup{sin}(\varphi)}\right)^2 \symup{sin}^2\left(\frac{\pi~b~\symup{sin}(\varphi)}{\lambda}\right)
+\end{align*}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{amp.PNG}
+  \caption{Amplitudenverteilung bei Frauenhofer'scher Beugung am Einzelspalt. \cite{Q1}}
+  \label{abb3}
+\end{figure}
+
+\noindent Die Intensitätsverteilung bei der Beugung am Doppelspalt lässt sich als Überlagerung
+zweier Einzelspalte betrachten, was in Abbildung \ref{abb4} gut zu sehen ist.
+Folglich ergibt sich für die Intensität am Beobachtungspunkt:
+\begin{align*}
+  I(\varphi) \propto B(\varphi)^2 = 4 \symup{cos}^2\left(\frac{\pi~s~\symup{sin}(\varphi)}{\lambda}\right) \left(\frac{\lambda}{\pi~\symup{sin}(\varphi)}\right)^2 \symup{sin}^2\left(\frac{\pi~b~\symup{sin}(\varphi)}{\lambda}\right) .
+\end{align*}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{ds.PNG}
+  \caption{Schematische Darstellung der Beugung am Doppelspalt. \cite{Q1}}
+  \label{abb4}
+\end{figure}
+
+\section{Durchführung}
+Der versuchsaufbau ist in Abbildung \ref{abb5} gut zu sehen. Er besteht aus einem Helium-Neon-Laser,
+der eine möglichst ebene Lichtwelle emittiert. Um den, bei der Frauenhofer'schen Beugung geforderten,
+unendlichen Abstand zwischen Spalt und Detektor zu nähern, muss dieser Abstand $L$ mindestens einen Meter
+betragen. Der Detektor muss dabei senkrecht zum Lichtstrahl zu verschieben sein.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{aufbau.PNG}
+  \caption{Versuchsaufbau \cite{Q1}}
+  \label{abb5}
+\end{figure}
+Da die Messung nicht bei absoluter Dunkelheit durchgeführt werden kann, ist zu beachten,
+dass vor der Durchführung des Experiments der Dunkelstrom einmal gemessen wird und von
+den Messwerten abgezogen werden muss.
+Um die Längenskala am Detektor in den Beugungswinkel $\phi$ umzurechnen, wird folgende
+Formel verwendet:
+\begin{align*}
+  \phi \approx tan(\Phi) = \frac{\zeta - \zeta_0}{L}.
+\end{align*}
+$\zeta_0$ beschreibt dabei die Detektorstellung für die Richtung des ungebeugten Strahls.
+Um die Beugungsmuster zu analysieren, werden zunächst die Maxima grob bestimmt, um zu
+ermittlen, in welchen Bereichen mehr Messwerte aufgenommen werden. anschließend werden
+die Beugunsgmuster zweier Einzelspalte und eines Doppelspalts untersucht, indem die
+Intensitäten der einfallenden gebeugten und interferierenden Lichtsrahlen in verschiedenen
+Detektorstellungen gemessen werden. Die Lichtintensität und die jeweilig dazugehörige
+Detektorstellung werden notiert.
