@@ -130,3 +130,217 @@ in einem Zeitintervall von \SI{60}{\second} gemessen werden. Die Spannung beträ
 
 Zuletzt soll die Abhängigkeit der Ladung von der Spannung bestimmt werden, hierzu werden für mindestens 5 verschiedene Spannungen zwischen \SI{300}{\volt} und
 \SI{700}{\volt} die Counts und die Stromstärke gemessen.
+
+\section{Auswertung}
+\subsection{Charakteristik des Geiger-Müller-Zählrohrs}
+Im ersten Teil des Versuchs wird die Charakteristik des Geiger-Müller-Zählrohrs untersucht. Hierzu
+wird die Zählrate $N$ gegen die Betriebsspannung U aufgetragen. Die zur Erstellung des Plots \ref{abb1}
+benötigten Werte befinden sich ins Tabelle \ref{tab1}. Die Ausschläge des Geiger-Müller-Zählrohrs unterliegen
+der Poissonverteilung und sind somit fehlerbehaftet. Dieser statistische Fehler wird durch die Fehlerbalken
+in der Graphik \ref{abb1} gekennzeichnet und berechnet sich mit $\sqrt{\symup{N}}$.
+Im Plot ist zwischen \SI{370}{\volt} und \SI{610}{\volt} deutlich ein Plateau zu erkennen, welches eine Breite
+von \SI{240}{\volt} aufweist. Durch die Werte der Plateaus wird eine lineare Ausgleichsgerade gelegt, die in Abbildung \ref{abb2} explizit zu sehen ist,
+die folgende Gestalt aufweist:
+\FloatBarrier
+\begin{align*}
+  F = ax + b
+\end{align*}
+\FloatBarrier
+Hierbei ergeben sich für $a$ und $b$ folgende Werte:
+\FloatBarrier
+\begin{align*}
+  a &= \SI{0.021(5)}{} \\
+  b &= \SI{182,7(27)}{\frac{1}{s}}\\
+\end{align*}
+\FloatBarrier
+Mit Hilfe folgender Formel lässt sich dann der Steigungswinkel \alpha mit zugehörigem Fehler berechnen:
+\begin{align*}
+  \alpha &= \symup{arctan}(a) = \SI{1,203}{\degree} \\
+  \Delta \alpha &= \sqrt{\left( \frac{1}{a^2 + 1} \Delta a \right)^2 } = \SI{0,002}{\degree}
+\end{align*}
+\FloatBarrier
+Folglich wird eine Steigung von \SI{2,1(002)}{\percent} pro \SI{100}{\volt} mit Hilfe folgender Formeln berechnet:
+\FloatBarrier
+\begin{align*}
+  S_{\symup{\si{\percent}}} &= \symup{tan}(\alpha) \cdot 100 \\
+  \Delta S_{\symup{\si{\percent}}} &= \sqrt{\left( \frac{1}{\symup{cos}^2(a)} \Delta \alpha \right)^2}
+\end{align*}.
+\FloatBarrier
+
+\begin{table}
+  \centering
+  \caption{Messwerte zur Erstellung des Plots zur Analyse der Charakteristik des Geiger-Müller-Zählrohrs.}
+  \begin{tabular}{ c c c c }
+  \toprule
+  {U / V} & { N } & { U / V } & { N } \\
+  \midrule
+300   &       0   &   510   &   11665   \\
+310   &   10509   &   520   &   11647   \\
+320   &   10938   &   530   &   11658   \\
+330   &   11256   &   540   &   11811   \\
+340   &   11253   &   550   &   11737   \\
+350   &   11261   &   560   &   11479   \\
+360   &   11367   &   570   &   11839   \\
+370   &   11476   &   580   &   11621   \\
+380   &   11279   &   590   &   11642   \\
+390   &   11367   &   600   &   11697   \\
+400   &   11624   &   610   &   11570   \\
+410   &   11298   &   620   &   11724   \\
+420   &   11436   &   630   &   11628   \\
+430   &   11617   &   640   &   11844   \\
+440   &   11668   &   650   &   11929   \\
+450   &   11468   &   660   &   11861   \\
+460   &   11609   &   670   &   12040   \\
+470   &   11409   &   680   &   12279   \\
+480   &   11677   &   690   &   12236   \\
+490   &   11599   &   700   &   12388   \\
+500   &   11665   &         &           \\
+    \bottomrule
+  \end{tabular}
+  \label{tab1}
+\end{table}
+\FloatBarrier
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{1.pdf}
+  \caption{Plot zur Untersuchung der Charakteristik des Geiger-Müller-Zählrohrs.}
+  \label{abb1}
+\end{figure}
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{1b.pdf}
+  \caption{Plot zur Analyse des Plateaubereichs mit eingezeichnetem linearem Fit.}
+  \label{abb2}
+\end{figure}
+\FloatBarrier
+\subsection{Qualitative Bestimmung der Tot- sowie der Erholungszeit}
+Die Totzeit kann auf zwei Arten ermittelt werden. Zum einen können die einlaufenden Impulse
+mittels eines Oszilloskops sichtbar gemacht werden. Dann kann leicht der Abstand zwischen
+Beginn der Kurve und dem Erreichen der Nullinie abgelesen werden. Hier ergab sich für verschiedene
+Betriebsspannungen eine mittlerer Wert von $T_{\symup{T}}$=$\SI{207,5(95)}{\micro \second}$. Außerdem kann
+auf ähnliche Weise die Erholungszeit ermittelt werden. Hierzu wird der Oszillograph genau beobachtet,
+Da in dessen Display für kurze zeit Kurven mit der gleichen Höhe wie die der Totzeit in einem gewissen Abstand
+zu dieser aufflackern. Der Abstand zwischen dem Maximum der Kurve der Totzeit und dem Maximum der Erholungszeit
+wird ebenfalls für verschiedene Betriebsspannungen abgelesen, gemittelt und im Anschluss dazu der Fehler berechnet,
+was zu einem Wert für die Erholungszeit ($T_{\symup{E}}$) von $\SI{0,525(96)}{\milli \second}$ führt.
+Die abgelesenen Werte für die Totzeit, Erholungszeit und die jeweils zugehörige Spannung sind in tabelle \ref{tab2}
+zu finden.
+
+\begin{table}
+  \centering
+  \caption{Werte zur Ermittlung der Totzeit und der Erholungszeit am Oszillographen.}
+  \begin{tabular}{ c c c}
+    \toprule
+    {$T_{\symup{T}}$ / \si{\micro \second} } & {$T_{\symup{E}}$ / \si{\milli \second} } & { U / \si{\volt} } \\
+    \midrule
+    200   &   0,6   &   450   \\
+    200   &   0,4   &   500   \\
+    210   &   0,5   &   550   \\
+    220   &   0,6   &   600   \\
+    \bottomrule
+  \end{tabular}
+  \label{tab2}
+\end{table}
+\FloatBarrier
+Die Mittlung und der zugehörige Fehler für $T_{\symup{T}}$ und $T_{\symup{E}}$ berechnen sich wie folgt:
+\begin{align*}
+  \overline{T_{\symup{T,E}}} &=  \frac{1}{4} \sum_{i=1}^{4}{T_i}    \\
+  \Delta  \overline{T_{\symup{T,E}}} &= \sqrt{\frac{1}{3} \sum_{i=1}^{4}{\left(T_i - \overline{T_i} \right)^2} }   \\
+\end{align*}
+\subsection{Ermittlung der Totzeit mittels der zwei-Quellen Methode}
+\noindent Die Ermittlung der Totzeit mittels der zwei Quellen-Methode wird mit Hilfe von Gleichung \ref{eq:3}
+durchgeführt. Die dazu benötigten Werte für die Zählraten der einzelnen Quellen ($N_1$ und $N_2$), sowie die
+Zählrate beider Quellen gemeinsam ($N_{1+2}$) sind in Tabelle \ref{tab3} zu finden.
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{Messwerte zur Ermittlung der Totzeit}
+  \begin{tabular}{ c c c c }
+    \toprule
+    {$N_1$ / $\frac{1}{\si{\second}}$ } & {$N_2$ / $\frac{1}{\si{\second}}$} & {$N_{1+2}$ / $\frac{1}{\si{\second}}$} & {U / \si{\volt}} \\
+    \midrule
+    $177 \pm 2$   &   $205 \pm 2$   &   $381 \pm 3 $  &   550   \\
+    \bottomrule
+  \end{tabular}
+  \label{tab3}
+\end{table}
+Mit Gleichung \ref{eq:3} ergibt sich für die Totzeit ein Wert von $\SI{13,86(3395)}{\micro \second}$
+Bei der Berechnung der Totzeit ist zu beachten, dass sich in der Formel für deren Ermittlung
+mehrere fehlerbehaftete Größen befinden, weshalb hier die Gauß'sche Fehlerfortpflanzung zu beachten ist:
+\begin{align*}
+  \Delta T_{\symup{T}} = \sqrt{ \left( \frac{N_{1+2}~-~N_2}{2N_2 N_1^2}~\Delta N_1 \right)^2 + \left(\frac{N_{1+2}~-~N_1}{2 N_1 N_{2}^2}~\Delta N_2 \right)^2 + \left( \frac{-1}{2 N_1 N_2} \Delta N_{1+2}\right)^2 }
+\end{align*}
+
+\subsection{Messung der pro Teilchen vom Zählrohr freigesetzten Ladungsmenge}
+Im letzten Teil des Versuchs wird mittels Umstellung von \ref{eq:2} die vom Zählrohr freigestzte Ladungsmenge pro Teilchen
+berechnet:
+\begin{align*}
+  \Delta Q = \frac{\Delta t ~ I }{\symup{N}}\\
+\end{align*}
+Hierbei beschreibt N die im Zeitintervall $\Delta t$ registrierten Teilchen und $I$ ist die gemessene
+Stromstärke.
+Die berechneten Ergebnisse für die freigesetzte Ladung pro Teilchen sind in Tabelle \ref{tab4} zu sehen.
+Der Fehler für die freigesetzte Ladung ergibt sich abermals aus der Tatsache, dass die gemessene Teilchenzahl
+einen statistischen Fehler besitzt. Für eine Spannung von \SI{300}{\volt} wurde vom Zählrohr eine Teilchenzahl
+von Null gemessen, wovon auszugehen ist, dass dies nicht der Realität entspricht. Es lässt sich mit diesem
+Messergebnis jedoch keine Ladungsmenge bestimmen.
+In Abbildung \ref{abb3} sind die berechneten Ladungsmengen gegen die Betriebsspannung aufgetragen. Auf Grund
+der wenigen Messwerte ist diese Grafik als relativ ungenau zu betrachten, jedoch ist der lineare Zusammenhang
+zwischen Spannung und Ladungsmenge zu erahnen.
+
+\FloatBarrier
+\begin{table}
+  \centering
+  \caption{ Werte der pro Teilchen vom Zählrohr freigesetzten Ladungsmenge. }
+  \begin{tabular}{ c c c c c }
+    \toprule
+    { U / $\si{\volt}$ }   &  { N / $\frac{1}{\si{\second}}$ }  &  { I / $\si{\ampere}$ }  &  { $\Delta$ Q / $\si{\coulomb}$ }  &  { $\frac{\Delta \symup{Q}}{e_0}$ }    \\
+    \midrule
+    300   &  0            &   0,1    &  -                                &    -                              \\
+    400   &  202 $\pm$ 2  &   0,3    &  (1,485 $\pm$ 0,015) $10^{-9}$    &  (9,27  $\pm$ 0,09)   $10^{9}$   \\
+    550   &  205 $\pm$ 2  &   0,7    &  (3,415 $\pm$ 0,033) $10^{-9}$    &  (2,131 $\pm$ 0,021)  $10^{10}$   \\
+    600   &  210 $\pm$ 2  &   0,8    &  (3,81  $\pm$ 0,04)  $10^{-9}$    &  (2,378 $\pm$ 0,023)  $10^{10}$   \\
+    700   &  216 $\pm$ 2  &   1,1    &  (5,09  $\pm$ 0,05)  $10^{-9}$    &  (3,179 $\pm$ 0,029)  $10^{10}$   \\
+    \bottomrule
+  \end{tabular}
+  \label{tab4}
+\end{table}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{3.pdf}
+  \caption{Plot zur Darstellung des Verhältnisses zwischen Spannung und freigesetzter Ladungsmenge.}
+  \label{abb3}
+\end{figure}
+
+
+\section{Diskussion}
+
+Die im Experiment ermittelte prozentuale Steigung des linearen Fits an den Plateaubereich ist als sehr gering zu betrachten.Von daher
+ist davon auszugehen, dass das Geiger-Müller-Zählrohr zuverlässig arbeitet. In der Literatur werden Steigungen innerhalb des Plateaubereichs bis
+zu \SI{5}{\percent} toleriert \cite{Q2}.
+Des Weiteren werden die grundsätzlichen Charakteristiken eines Geiger-Müller-Zählrohrs anhand der Grafik (siehe Abbildung \ref{abb1}) gut sichtbar.
+
+\noindent Bei der Ermittlung der Totzeit fällt auf, dass sich deutliche Unterschiede zwischen den beiden Methoden abzeichnen.
+In der Literatur \cite{Q2} sind keine exakten Angaben für die Totzeit kleiner Halogenzählrohre, wie dem im Versuch verwendeten, angeben.
+Sie wird lediglich mit \SI{50}{\micro \second} bis \SI{100}{\micro \second} abgeschätzt.
+Ausgehend von einem Wert von \SI{75}{\micro \second}, besteht bei der Ermittlung der Totzeit über die
+zwei-Quellen-Methode eine prozentuale Abweichung von \SI{81,52}{\percent}. Die Prozentuale Abweichung von dem qualitativ ermittelten Wert
+liegt hingegen bei \SI{176,67}{\percent}. Beide Bestimmungen sind daher als recht fehleranfällig zu betrachten.
+Eine mögliche Fehlerquelle bei der Ermittlung durch die zwei-Quellen-Methode ist, dass beide Proben nicht den exakt gleichen Abstand vom
+Glimmerfenster besitzen. Bei der qualitativen Bestimmung ist das exakte Ablesen des Oszillographen wahrscheinlich die größte Fehlerquelle.
+Bei der Ermittlung der Erholungszeit ist die größte Schwierigkeit, die nur sehr kurz und mit einer hohen Frequenz aufblitzenden Kurven
+wahrzunehemen. Deshalb kann der Abstand der beiden Maxima lediglich abgeschätzt werden.
+
+\noindent Die Messungen der pro Teilchen freigesetzten Ladungsmengen ergaben plausible Werte und der lineare Zusammenhang zwischen den freigesetzten
+Ladungsmengen und der angelegten Betriebsspannung ist trotz der wenigen Messwerte zu erahnen.
+Hier bleibt zu erwähnen, dass bei wiederholtem Durchführen des Versuchs darauf zu achten ist, schon bei der Untersuchung der Charakteristik
+des Zählrohrs, bei jeder Messung die entsprechenden Stromstärken zu notieren. Somit stehen zur Auswertung deutlich mehr Werte zur Verfügung,
+was ein eindeutigeres ergebnis liefern würde.
+
+
+
+\newpage
+\nocite{*}
+\printbibliography
