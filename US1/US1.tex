@@ -1,5 +1,145 @@
+\section{Zielsetzung}
+Im Versuch werden mit Hilfe zweier grundlegender Funktionsweisen der Ultraschalltechnik,
+dem Impuls-Echo- und dem Durchschallungsverfahren die Schallgeschwindigkeit in Acryl
+und einem medizinischen Modell untersucht.
+
 \section{Theorie}
+Als Ultraschall wird Schall mit einer Frequenz von \SI{20}{\kilo \hertz} bis \SI{1}{\giga \hertz}
+beschrieben. Diese Schallfrequenzen kommen in der Medizin in Diagnostik und Therapie zum Einsatz.
+Schall ist eine longitudinale Welle, die in einem Medium mittels Druckschwankungen weitergeleitet
+wird:
+\FloatBarrier
+\begin{align*}
+  p(x,t) = p_0 + v_0~Z \symup{cos}(\omega t - kx)
+\end{align*}
+\FloatBarrier
+In dieser Gleichung beschreibt $Z$ die akustische Impedanz, welche durch die Dichte $\rho$ und die
+Schallgeschwindigkeit $c$ im vorliegenden Stoff beschrieben wird:
+\FloatBarrier
+\begin{align*}
+  Z = c \cdot \rho
+\end{align*}
+\FloatBarrier
+Bei Schallwellen ist die Phasengeschwindigkeit auf Grund von Dichte und Druckschwankungen materialabhängig.
+Sie zeigen also im Gegensatz zu elektromagnetischen Wellen Dispersion. Alle anderen grundlegenden
+Eigenschaften der elektromagnetischen Wellen zeigen Schallwellen ebenso.
+Im Versuch ist lediglich die Schallweiterleitung in Festkörpern von Bedeutung, welche durch
+folgenden Zusammenhang zwischen $E$, dem Elastizitätsmodul und der Dichte $\rho$ beschrieben wird:
+\FloatBarrier
+\begin{align*}
+  c_{\symup{\tiny{FK}}} = \sqrt{\frac{E}{\rho}}
+\end{align*}
+\FloatBarrier
+Hierbei ist zu beachten, dass $c_{\symup{\tiny{FK}}}$ für transversale und longitudinale Wellen
+unterschiedlich aussieht.
+Breiten sich Schallwellen in einem Festkörper aus, so verlieren diese durch Absorption exponentiell an Energie.
+Somit wird die Intensität einer Welle durch folgenden Zusammenhang beschrieben:
+\FloatBarrier
+\begin{align*}
+  I(x) = I_0 \cdot \symup{e}^{(-\alpha ~ x)}
+\end{align*}
+\FloatBarrier
+In dieser Gleichung beschreibt $\alpha$ den Absorptionskoeffizienten, $I_0$ die Anfangsintensität und $x$
+die zurückgelegte Strecke.
+Der Absorptionskoeffizient ist für Luft sehr groß, weshalb im Versuch darauf zu achten ist, dass
+stets ein Kontaktmittel zwischen Ultraschallkopf und zu untersuchendem Körper verwendet wird.
+Bei dem Kontaktmittel handelt es sich um Hydrogel oder bidestilliertes Wasser.
+Treffen Schallwellen auf Grenzflächen, so werden sie reflektiert. Die Reflexion kann durch den
+Reflexionskoeffizienten $R$ beschrieben werden, für dessen Berechnung die Impedanzen der beiden
+Materialien, die die Grenzfläche bilden, wichtig sind:
+\FloatBarrier
+\begin{align*}
+  R = \left(\frac{Z_1 - Z_2}{Z_1 + Z_2} \right)^2
+\end{align*}
+\FloatBarrier
+Der Reflexionskoeffizient gibt das Verhältnis zwischen einlaufender und reflektierter Welle an.
+Folglich ergibt sich der Transmissionskoeffizient zu $T = 1 ~ - R$.
+Um Ultraschallwellen zu erzeugen, wird der Piezoelektrische Effekt verwendet, wobei ein piezoelektrischer
+Kristall (Quarz) mittels eines elektrischen Feldes in Schwingung versetzt wird, wodurch dieser
+Ultraschallwellen emittiert. Das elektrische Feld übt eine Kraft auf die einzelnen Ladungen im Kristallgitter aus,
+welches sich daraufhin zusammenzieht oder ausdehnt und somit beginnt zu schwingen. Umgekehrt können Schallwellen
+das Kristallgitter in Schwingung versetzen, wodurch sich der Ladungsschwerpunkt verschiebt und folglich eine
+Spannung anliegt. So kann der piezoelektrische Effekt ebenso zur Detektion von Ultarschallwellen genutzt werden.
+Mittels Ultraschall ist es so möglich Aussagen über die Beschaffenheit von Körpern zu treffen, ohne diese eröffnen
+zu müssen.
+Dies kann auf zwei verschiedene Arten geschehen. Zum einen, indem von einem Sender ein kurzer Schallimpuls durch das
+Medium ausgesendet wird, welcher von einem Detektor auf der anderen Seite des zu utersuchenden Körpers aufgefangen wird.
+Mögliche Fehlstellen sind durch eine Abschwächung des Signals zu erkennen. Die Lokalisation dieser ist jedoch nicht möglich.
+Dieses Verfahren wird Durchschallungsverfahren genannt und ist schematisch in Abbildung \ref{abb1} zu sehen.
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.8]{1.PNG}
+  \caption{Schematische Darstellung des Durchschallungsverfahrens.}
+  \label{abb1}
+\end{figure}
+\FloatBarrier
+Das zweite Verfahren, das bei der Unteruschung von Medien zum Einsatz kommt, ist das Impuls-Echo-Verfahren.
+Hierbei fungiert der Schallkopf sowohl als Sender als auch als Empfänger, der an den Grenzflächen
+emittierten Ultraschallwellen. Wie aus Abbildung \ref{abb2} hervorgeht, ist es mittels dieser Methode möglich,
+etwaige Fehlstellen zu detektieren. Deren Größe kann durch die Höhe der gemessenen Reflexion abgeschätzt werden.
+Ist die Schallgeschwindigkeit im Medium bekannt, so kann mittels folgender Formel ebenfalls die Lage der
+Fehlstelle ermittelt werden:
+\FloatBarrier
+\begin{align*}
+  s = \frac{1}{2} c ~ t
+\end{align*}
+
+\FloatBarrier
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{2.PNG}
+  \caption{Schematische Darstellung des Impuls-Echo-Verfahrens.}
+  \label{abb2}
+\end{figure}
+\FloatBarrier
+
 \section{Durchführung}
+Zur Durchführung des Versuchs steht ein Echoskop, eine Ultraschallsonde für die Impuls-Echo-Methode, sowie eine weitere
+für das Durchschallungsverfahren bereit. Beide Ultraschallsonden haben \SI{2}{\mega \hertz}.
+Am Echoskop kann das Ultraschallsignal verstärkt werden, um Amplitudenmaxima
+deutlicher darstellen zu lassen. Bei der Einstellung des Echoskops ist darauf zu achten, dass zwischen den beiden Scan-Einstelungen
+mit einem Kippschalter zwischen "REFLEC." und "TRANS."" gewechselt werden kann.
+Außerdem wird zur Auswertung der Daten ein PC verwendet, wodurch die Daten direkt
+mit der FFT (Fast Fourier Transformation) und dem Cepstrum verglichen werden können.
+Die zu untersuchenden Körper sind Acrylzylinder mit verschiedener Höhe und das Modell eines menschlichen Auges.
+Zu Beginn des Versuchs wird mit dem Impuls-Echo-Verfahren ein A-Scan (Amplitudenscan) eines Zylinders aufgenommen, der auf einem
+Papiertuch steht. Das Signal wird für diese Messung so verstärkt, dass die Amplitude des ersten Peaks zwischen 1 und \SI{1,2}{\volt} liegt.
+Die eine Oberfläche des Zylinderdeckels wird mit bidestilliertem Wasser benetzt und eine Ultraschallsonde aufgesetzt. Mittels
+dem Auswertungsprogramm auf dem PC wird ein Plot erstellt, in dem die Laufzeit gegen die Spannung aufgetragen
+wird. Die erscheinenden ersten Maxima werden in ihrer Höhe und ihrem Abstand zueinander vermessen. Daraus lässt sich
+die Höhe des Zylinders ermitteln. Die Höhe und der Abstand der Maxima können mit Coursorn direkt im Plot auf dem PC exakt
+analysiert werden.
+Anschließend wird die Verstärkung komplett ausgeschaltet, um die Messergebnisse der folgenden beiden Messungen nicht zu verfälschen.
+Dann wird die vorher beschriebene Messung für sechs weitere Zylinder mit unterschiedlicher Höhe durchgeführt.
+Alle Zylinder werden ebenfalls mit einer Schieblehre vermessen, sodass dann die experimentell ermittelten Höhen mit den tatsächlich
+gemessenen verglichen werden können. Außerdem kann mit den Messergebnissen die Schallgeschwindigkeit in den Acrylzylindern ermittelt werden.
+Gleichzeitig werden nacheinander für die vermessenen Zylinder die Lage aller auf dem Plot dargestellten Maxima
+ermittelt und somit die Dämpfung des Ultraschallsignals ermittelt.
+
+\noindent Im anschließenden Versuchteil wird die Durchlaufzeit des Ultraschallsignals für einen Zylinder mit Hilfe des Durchschallungsverfahrens
+ermittelt und somit die Schallgeschwindigkeit im Acrylzylinder ermittelt.
+Hierzu wird der Kippschalter am Echoskop auf "TRANS." umgelegt, ein Zylinder auf eine Führungsschiene gelegt und an dessen
+beiden Enden jeweils eine Ultraschallsonde angelegt. Eine als Sender, eine als Empfänger.
+Es werden abermals im Plot am PC die Peaks und deren Abstand zueinander vermessen, woraus sich die Laufzeit des Ultraschallsignals im Zylinder
+ergibt.
+Anschließend werden die Ergebnisse aus dem Impuls-Echo-Verfahren mit dem Durchschallungsverfahren vergichen.
+
+\noindent Im nächsten Teil des Versuchs werden wieder im Impuls-Echo-Verfahren Mehrfachimpulse aufgenommen, indem zwei unterschiedlich dicke Acrylplatten
+aufeinander gelegt werden, auf die ein ca. \SI{4}{\centi \metre} hoher Acrylzylinder gestellt wird, an den mit bidestilliertem Wasser eine
+Ultraschallsonde gekoppelt wird. Die Verstärkung wird so eingestellt, dass im Plot drei Mehrfachechos zu erkennen sind. Wird im Analyseprogramm
+dann die Eindringtiefe (depth in \si{\milli \metre}) gegen die Spannung aufgetragen, so können die Dicken der Platte bequem abgelesen werden, wenn
+im Porgramm die zuvor ermittelte Schallgeschwindigkeit für Acryl eingestellt wurde.
+Sodann werden die Marker so gesetzt, dass mittels der FFT ein Spektrum und ein Cepstrum des Mehrfachechos angezeigt werden. Der entstandene
+Plot wird gespeichert, um ihn dann zu analysieren.
+
+
+\noindent Im letzten Teil des Versuchs wird mittels des Impuls-Echo-Verfahrens und dem A-Scan ein Augenmodell biometrisch vermessen. Hierzu wird auf das Auge ein Hydrogel aufgetragen, sodass
+die Ultraschallsonde auf dem Auge vorsichtig mit wenig Druck bewegt werden kann. Sitzt die Sonde mittig auf der Hornhaut des Modells,
+so sind im Plot fünf Maxima zu erkennen, deren Laufzeiten vermessen werden, wodurch dann die Abmessungen des Auges bestimmt werden können.
+Es ist zu beachten, dass die Schallgeschwindigkeit in der Linse von der im Glaskörper unterschiedlich ist, was bei der Berechnung der
+Abmessung des Auges zu beachten ist.
+
 
 \section{Auswertung}
 \subsection{Messung der Schallgeschwindigkeit}
