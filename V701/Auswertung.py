@@ -122,8 +122,12 @@ N3_min= round(np.min(N3), 0)
 N3_max= round(np.max(N3), 0)
 l = N3_Mittelwert
 t = np.linspace(N3_min, N3_max, 10000)
+
+P= np.random.poisson(l, 10000)
+
 #p2 = l**t/factorial(t)*np.exp(-l)
-f=(np.exp(t*(1+np.log(l/t))-l))/(np.sqrt(2*np.pi*(t+1/6)))
-plt.plot(t, f,'r-', label="Poisson")
+#f=(np.exp(t*(1+np.log(l/t))-l))/(np.sqrt(2*np.pi*(t+1/6)))
+plt.hist(P,  bins=18, alpha=0.75, normed=True)
+#plt.plot(t, P,'r-', label="Poisson")
 #plt.plot(t, p2, 'r-')
 plt.savefig('Messung3b.pdf')
