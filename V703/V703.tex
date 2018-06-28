@@ -160,7 +160,7 @@ Mit Hilfe folgender Formel lässt sich dann der Steigungswinkel \alpha mit zugeh
   \Delta \alpha &= \sqrt{\left( \frac{1}{a^2 + 1} \Delta a \right)^2 } = \SI{0,002}{\degree}
 \end{align*}
 \FloatBarrier
-Folglich wird eine Steigung von \SI{2,1(002)}{\percent} pro \SI{100}{\volt} mit Hilfe folgender Formeln berechnet:
+Folglich wird eine Steigung von \SI{2,100(2)}{\percent} pro \SI{100}{\volt} mit Hilfe folgender Formeln berechnet:
 \FloatBarrier
 \begin{align*}
   S_{\symup{\si{\percent}}} &= \symup{tan}(\alpha) \cdot 100 \\
@@ -204,28 +204,29 @@ Folglich wird eine Steigung von \SI{2,1(002)}{\percent} pro \SI{100}{\volt} mit 
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{1.pdf}
+  \includegraphics[scale=0.7]{1.pdf}
   \caption{Plot zur Untersuchung der Charakteristik des Geiger-Müller-Zählrohrs.}
   \label{abb1}
 \end{figure}
 \FloatBarrier
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{1b.pdf}
+  \includegraphics[scale=0.7]{1b.pdf}
   \caption{Plot zur Analyse des Plateaubereichs mit eingezeichnetem linearem Fit.}
   \label{abb2}
 \end{figure}
 \FloatBarrier
+
 \subsection{Qualitative Bestimmung der Tot- sowie der Erholungszeit}
 Die Totzeit kann auf zwei Arten ermittelt werden. Zum einen können die einlaufenden Impulse
 mittels eines Oszilloskops sichtbar gemacht werden. Dann kann leicht der Abstand zwischen
 Beginn der Kurve und dem Erreichen der Nullinie abgelesen werden. Hier ergab sich für verschiedene
-Betriebsspannungen eine mittlerer Wert von $T_{\symup{T}}$=$\SI{207,5(95)}{\micro \second}$. Außerdem kann
+Betriebsspannungen eine mittlerer Wert von $T_{\symup{T}}$=$\SI{207,5(48)}{\micro \second}$. Außerdem kann
 auf ähnliche Weise die Erholungszeit ermittelt werden. Hierzu wird der Oszillograph genau beobachtet,
 Da in dessen Display für kurze zeit Kurven mit der gleichen Höhe wie die der Totzeit in einem gewissen Abstand
 zu dieser aufflackern. Der Abstand zwischen dem Maximum der Kurve der Totzeit und dem Maximum der Erholungszeit
 wird ebenfalls für verschiedene Betriebsspannungen abgelesen, gemittelt und im Anschluss dazu der Fehler berechnet,
-was zu einem Wert für die Erholungszeit ($T_{\symup{E}}$) von $\SI{0,525(96)}{\milli \second}$ führt.
+was zu einem Wert für die Erholungszeit ($T_{\symup{E}}$) von $\SI{0,525(48)}{\milli \second}$ führt.
 Die abgelesenen Werte für die Totzeit, Erholungszeit und die jeweils zugehörige Spannung sind in tabelle \ref{tab2}
 zu finden.
 
@@ -248,7 +249,7 @@ zu finden.
 Die Mittlung und der zugehörige Fehler für $T_{\symup{T}}$ und $T_{\symup{E}}$ berechnen sich wie folgt:
 \begin{align*}
   \overline{T_{\symup{T,E}}} &=  \frac{1}{4} \sum_{i=1}^{4}{T_i}    \\
-  \Delta  \overline{T_{\symup{T,E}}} &= \sqrt{\frac{1}{3} \sum_{i=1}^{4}{\left(T_i - \overline{T_i} \right)^2} }   \\
+  \Delta  \overline{T_{\symup{T,E}}} &= \frac{1}{2}~\sqrt{\frac{1}{3} \sum_{i=1}^{4}{\left(T_i - \overline{T_i} \right)^2} }   \\
 \end{align*}
 \subsection{Ermittlung der Totzeit mittels der zwei-Quellen Methode}
 \noindent Die Ermittlung der Totzeit mittels der zwei Quellen-Methode wird mit Hilfe von Gleichung \ref{eq:3}
@@ -284,9 +285,9 @@ Hierbei beschreibt N die im Zeitintervall $\Delta t$ registrierten Teilchen und 
 Stromstärke.
 Die berechneten Ergebnisse für die freigesetzte Ladung pro Teilchen sind in Tabelle \ref{tab4} zu sehen.
 Der Fehler für die freigesetzte Ladung ergibt sich abermals aus der Tatsache, dass die gemessene Teilchenzahl
-einen statistischen Fehler besitzt. Für eine Spannung von \SI{300}{\volt} wurde vom Zählrohr eine Teilchenzahl
-von Null gemessen, wovon auszugehen ist, dass dies nicht der Realität entspricht. Es lässt sich mit diesem
-Messergebnis jedoch keine Ladungsmenge bestimmen.
+einen statistischen Fehler von $\sqrt{\symup{N}}$ besitzt. Für eine Spannung von \SI{300}{\volt} wurde vom Zählrohr eine Teilchenzahl
+von Null gemessen, wovon auszugehen ist, dass die Teilchenzahl noch nicht im Auslösebereich des verwendeten Zählrohrs liegt.
+Es lässt sich mit diesem Messergebnis jedoch keine Ladungsmenge bestimmen.
 In Abbildung \ref{abb3} sind die berechneten Ladungsmengen gegen die Betriebsspannung aufgetragen. Auf Grund
 der wenigen Messwerte ist diese Grafik als relativ ungenau zu betrachten, jedoch ist der lineare Zusammenhang
 zwischen Spannung und Ladungsmenge zu erahnen.
@@ -318,7 +319,7 @@ zwischen Spannung und Ladungsmenge zu erahnen.
 
 \section{Diskussion}
 
-Die im Experiment ermittelte prozentuale Steigung des linearen Fits an den Plateaubereich ist als sehr gering zu betrachten.Von daher
+Die im Experiment ermittelte prozentuale Steigung des linearen Fits an den Plateaubereich ist mit $\SI{2,1}{\percent}$ als sehr gering zu betrachten.Von daher
 ist davon auszugehen, dass das Geiger-Müller-Zählrohr zuverlässig arbeitet. In der Literatur werden Steigungen innerhalb des Plateaubereichs bis
 zu \SI{5}{\percent} toleriert \cite{Q2}.
 Des Weiteren werden die grundsätzlichen Charakteristiken eines Geiger-Müller-Zählrohrs anhand der Grafik (siehe Abbildung \ref{abb1}) gut sichtbar.
@@ -334,7 +335,8 @@ Glimmerfenster besitzen. Bei der qualitativen Bestimmung ist das exakte Ablesen 
 Bei der Ermittlung der Erholungszeit ist die größte Schwierigkeit, die nur sehr kurz und mit einer hohen Frequenz aufblitzenden Kurven
 wahrzunehemen. Deshalb kann der Abstand der beiden Maxima lediglich abgeschätzt werden.
 
-\noindent Die Messungen der pro Teilchen freigesetzten Ladungsmengen ergaben plausible Werte und der lineare Zusammenhang zwischen den freigesetzten
+\noindent Die Messungen der pro Teilchen freigesetzten Ladungsmengen ergaben im Vergleich mit den Größenordnungen aus Abbildung \ref{abb:2},
+plausible Werte und der lineare Zusammenhang zwischen den freigesetzten
 Ladungsmengen und der angelegten Betriebsspannung ist trotz der wenigen Messwerte zu erahnen.
 Hier bleibt zu erwähnen, dass bei wiederholtem Durchführen des Versuchs darauf zu achten ist, schon bei der Untersuchung der Charakteristik
 des Zählrohrs, bei jeder Messung die entsprechenden Stromstärken zu notieren. Somit stehen zur Auswertung deutlich mehr Werte zur Verfügung,

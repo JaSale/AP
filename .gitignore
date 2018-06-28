@@ -6,3 +6,4 @@
 *.bbl
 *.blg
 dokument.pdf
+.DS_Store
