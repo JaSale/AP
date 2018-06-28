@@ -48,7 +48,8 @@ print('EX1:', EX1, 'MeV')
 
 #Plot1b x:Druck y:Energie_________________________________________________________
 plt.figure(2)
-E_0=4 #in MeV
+E_0=4 #in MeVp1 = norm.pdf(t, N3_Mittelwert, N3_Abweichung)
+
 E1 = C1/951*E_0 #in MeV
 plt.plot(p1, E1, 'b.', label='Messwerte')
 L1plot = np.linspace(0, 1000)
@@ -109,8 +110,8 @@ N3_Abweichung = (sum((N3-N3_Mittelwert)**2)/100)**(1/2)
 print('Abweichung(N3): ',N3_Abweichung)
 
 t = np.linspace(4700, 5700)
-p1 = norm.pdf(t, N3_Mittelwert, N3_Abweichung)
-plt.plot(t, p1, 'r-')
+p10 = norm.pdf(t, N3_Mittelwert, N3_Abweichung)
+plt.plot(t, p10, 'r-')
 
 plt.savefig('Messung3a.pdf')
 
@@ -131,3 +132,10 @@ plt.hist(P,  bins=18, alpha=0.75, normed=True)
 #plt.plot(t, P,'r-', label="Poisson")
 #plt.plot(t, p2, 'r-')
 plt.savefig('Messung3b.pdf')
+
+
+#tabellen erstellen
+z = np.genfromtxt('zahlen.txt' , unpack=True)
+np.savetxt('Tabelle1.txt', np.column_stack([p1, N1, C1, N1_g, E1]), delimiter=' & ', newline= r' \\'+'\n', fmt='%.2f')
+np.savetxt('Tabelle2.txt', np.column_stack([p2, N2, C2, N2_g]), delimiter=' & ', newline= r' \\'+'\n', fmt='%.0f')
+np.savetxt('Tabelle3.txt', np.column_stack([z[0:25], N3[0:25], z[25:50], N3[25:50], z[0:25], N3[50:75], z[25:50], N3[75:100] ]), delimiter=' & ', newline= r' \\'+'\n', fmt='%.0f')

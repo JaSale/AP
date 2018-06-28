@@ -80,10 +80,112 @@ Mittelwert und Varianz der Zählraten bestimmt. Anschließend werden die Ergebni
 \section{Auswertung}
 \subsection{Bestimmung der Reichweite von Alpha-Strahlung}
 Die Messwerte zur Bestimmung der Reichweite von Alpha-Strahlung sind in Tabelle \ref{tab:1} und \ref{tab:2} aufgelistet.
+Die Zählrate $R=\frac{N_{\symup{gesamt}}}{\symup\Delta t}$ , wobei $N$ die Counts in dem Messintervall $\Delta t=\SI{120}{\second}$ beschreibt, wird gegen
+die 
 
 \begin{table}
   \centering
   \caption{Messwerte: Reichweite der Alpha-Strahlung bei $x_0=2 \, \mathrm{cm}$}
   \label{tab:1}
+  \begin{tabular}{c c c c c}
+    \toprule
+    Druck & Counts & Channel & alle Counts & Enerige \\
+    $p$ / \si{\milli\bar} & $N$ & $C$ & $N_{\symup{gesamt}}$ & $E$ / \si{\mega\eV} \\
+    \midrule
+    0 & 212 & 951 & 78949 & 4.00 \\
+    50 & 219 & 879 & 75793 & 3.70 \\
+    100 & 223 & 852 & 75596 & 3.58 \\
+    150 & 227 & 822 & 74744 & 3.46 \\
+    200 & 239 & 795 & 73799 & 3.34 \\
+    250 & 246 & 769 & 72949 & 3.23 \\
+    300 & 263 & 742 & 72668 & 3.12 \\
+    350 & 281 & 726 & 72257 & 3.05 \\
+    400 & 272 & 699 & 71129 & 2.94 \\
+    450 & 280 & 650 & 68861 & 2.73 \\
+    500 & 297 & 633 & 66846 & 2.66 \\
+    550 & 309 & 612 & 66164 & 2.57 \\
+    600 & 314 & 579 & 63336 & 2.44 \\
+    650 & 331 & 558 & 59725 & 2.35 \\
+    700 & 329 & 505 & 53819 & 2.12 \\
+    750 & 334 & 472 & 44985 & 1.99 \\
+    800 & 344 & 457 & 36568 & 1.92 \\
+    850 & 299 & 444 & 22941 & 1.87 \\
+    900 & 195 & 443 & 12352 & 1.86 \\
+    950 & 189 & 440 & 8248 & 1.85 \\
+    1000 & 55 & 441 & 2060 & 1.85 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
+\begin{table}
+  \centering
+  \caption{Messwerte: Reichweite der Alpha-Strahlung bei $x_0=2,5 \, \mathrm{cm}$}
+  \label{tab:2}
+  \begin{tabular}{c c c c}
+    \toprule
+    Druck & Counts & Channel & alle Counts \\
+    $p$ / \si{\milli\bar} & $N$ & $C$ & $N_{\symup{gesamt}}$ \\
+    \midrule
+    0 & 174 & 904 & 63009 \\
+    50 & 184 & 881 & 62457 \\
+    100 & 182 & 826 & 61698 \\
+    150 & 199 & 804 & 61184 \\
+    200 & 205 & 774 & 59786 \\
+    250 & 219 & 746 & 59545 \\
+    300 & 212 & 719 & 58084 \\
+    350 & 233 & 689 & 57667 \\
+    400 & 235 & 654 & 56901 \\
+    450 & 245 & 633 & 56036 \\
+    500 & 251 & 623 & 56577 \\
+    550 & 240 & 594 & 54787 \\
+    600 & 257 & 543 & 48507 \\
+    650 & 271 & 508 & 43352 \\
+    700 & 322 & 451 & 35190 \\
+    750 & 262 & 443 & 19731 \\
+    800 & 176 & 440 & 9231 \\
+    850 & 73 & 440 & 2882 \\
+    900 & 7 & 447 & 191 \\
+    950 & 2 & 433 & 33 \\
+    1000 & 0 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Statistik}
+
+\begin{table}
+  \centering
+  \caption{Statistik.}
+  \label{tab:3}
+  \begin{tabular}{c c|c c|c c|c c}
+    \toprule
+    Messung & Counts & Messung & Counts & Messung & Counts & Messung & Counts \\
+    \midrule
+    1 & 5131 & 26 & 5286 & 51 & 5304 & 76 & 5109 \\
+    2 & 5555 & 27 & 5440 & 52 & 4875 & 77 & 5117 \\
+    3 & 5100 & 28 & 5280 & 53 & 4990 & 78 & 5144 \\
+    4 & 5597 & 29 & 5087 & 54 & 4743 & 79 & 4876 \\
+    5 & 5502 & 30 & 5227 & 55 & 5136 & 80 & 5214 \\
+    6 & 5308 & 31 & 5547 & 56 & 5336 & 81 & 5032 \\
+    7 & 5041 & 32 & 5368 & 57 & 5119 & 82 & 5265 \\
+    8 & 4854 & 33 & 5182 & 58 & 4966 & 83 & 5115 \\
+    9 & 5280 & 34 & 4863 & 59 & 4807 & 84 & 5269 \\
+    10 & 5274 & 35 & 5258 & 60 & 5176 & 85 & 4960 \\
+    11 & 5156 & 36 & 5523 & 61 & 4855 & 86 & 5036 \\
+    12 & 4983 & 37 & 5067 & 62 & 5193 & 87 & 5024 \\
+    13 & 5215 & 38 & 5496 & 63 & 4935 & 88 & 5346 \\
+    14 & 4945 & 39 & 5215 & 64 & 4952 & 89 & 5203 \\
+    15 & 5567 & 40 & 5493 & 65 & 4985 & 90 & 5049 \\
+    16 & 5065 & 41 & 5047 & 66 & 5103 & 91 & 5079 \\
+    17 & 5474 & 42 & 5131 & 67 & 5137 & 92 & 4955 \\
+    18 & 5209 & 43 & 5001 & 68 & 4952 & 93 & 4823 \\
+    19 & 5526 & 44 & 5249 & 69 & 5275 & 94 & 4910 \\
+    20 & 5084 & 45 & 5144 & 70 & 4939 & 95 & 4947 \\
+    21 & 5277 & 46 & 4974 & 71 & 4751 & 96 & 4953 \\
+    22 & 5301 & 47 & 5353 & 72 & 5216 & 97 & 5043 \\
+    23 & 5451 & 48 & 5289 & 73 & 5159 & 98 & 5641 \\
+    24 & 5176 & 49 & 5044 & 74 & 5016 & 99 & 5531 \\
+    25 & 4950 & 50 & 4935 & 75 & 5291 & 100 & 5242 \\
+    \bottomrule
+  \end{tabular}
 \end{table}
