@@ -79,40 +79,109 @@ Mittelwert und Varianz der Zählraten bestimmt. Anschließend werden die Ergebni
 
 \section{Auswertung}
 \subsection{Bestimmung der Reichweite von Alpha-Strahlung}
-Die Messwerte zur Bestimmung der Reichweite von Alpha-Strahlung sind in Tabelle \ref{tab:1} und \ref{tab:2} aufgelistet.
-Die Zählrate $R=\frac{N_{\symup{gesamt}}}{\symup\Delta t}$ , wobei $N$ die Counts in dem Messintervall $\Delta t=\SI{120}{\second}$ beschreibt, wird gegen
-die 
+Die Messwerte zur Bestimmung der Reichweite von Alpha-Strahlung bei $x_0=\SI{0}{\centi\meter}$ sind in Tabelle \ref{tab:1} aufgelistet, wobei $x_0$
+den Abstand zwischen der Quelle und dem Detektor beschreibt.
+Zur Bestimmung der Abhängigkeit der Energie $E$ vom Druck $p$, muss zunächst die Energie berechnet werden. Hierzu wird von einer linearen
+Energieskala ausgegangen, wobei die Alpha-Teilchen bei dem Druck $p=\SI{0}{\bar}$ eine Energie von $\SI{4}{\mega\eV}$ besitzen. Diese Energien können
+mittels Dreisatz für alle anderen Messungen berechnet werden:
+\begin{equation*}
+  E(p)= \frac{C(p)}{C(p=0)} \cdot \SI{4}{\mega\eV}
+\end{equation*}
+Die Enerige $E(p)$  wird in Abhängigkeit des Druckś $p$ ist in Abbildung \ref{abb:1} aufgetragen.
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{Messung1b.pdf}
+  \caption{Enerige $E$ in Abhängigkeit des Drucks $p$.}
+  \label{abb:1}
+\end{figure}
+Mittels einer linearen Regression der Form $E(p)=a\,p+b$ kann die Funktion für $E(p)$ ermittelt werden:
+\begin{align*}
+  a&= \SI{-2,21(7)}{\mega\eV\per\milli\bar} \\
+  b&= \SI{3,80(4)}{\mega\eV}\\
+  E(p)&= -2,21 \cdot p +3,8
+\end{align*}
+wobei $E$ in \si{\mega\eV} und $p$ in \si{bar}.
 
+Des weiteren soll die mittlere Reichweite der Alpha Teilchen bestimmt werden, die Messwerte zu diesem Versuchsteil sind in Tabelle \ref{tab:1} und
+\ref{tab:2} aufgelistet. Zur Bestimmung der mittleren Reichweite wird in Abbildung \ref{abb:2} die Rate $R$ der "Pulses Detected", also
+$R=\frac{N_{\symup{gesamt}}}{\symup\Delta t}$, gegen die effektive Länge aufgetragen, hierbei ist $\symup\Delta t = \SI{120}{\second}$ das Messintervall
+und $N_{\symup{gesamt}}$ die gemessenen Impulse in dem Zeitintervall.
+Die effektive Länge $x$ lässt sich aus dem gemessenen Druck $p$ berechnen mit Hilfe der Formel
+\begin{equation*}
+  x = x_0 \cdot \frac{p}{p_0}
+\end{equation*}
+wobei $x_0$ den Abstand zwischen der Quelle und dem Detektor und $p_0=\SI{1013,25}{\milli\bar}$ den Atmosphärendruck beschreibt.
+Die Messung für $x_0=\SI{2}{\centi\meter}$ ist in Abbildung \ref{abb:2} zu sehen und die Messung für $x_0={2,5}{\centi\meter}$ in Abbildung \ref{abb:3}.
+
+Zur Bestimmung der mittleren Reichweite der Alpha-Teilchen wird eine lineare Regression ab dem Abfall der Messwerte druchgeführt. Die mittlere Reichweite ist
+als die Reichweite definiert, bei der nurnoch die Hälfte der "Impulse detected" erfasst werden. Damit kann nun die mittlere Reichweite berechnet werden.
+Die lineare Regression der Form $N_{\symup{gesamt}}(x)=m\cdot x+b$ liefert die Werte für beide Messungen
+\begin{align*}
+  m_1 &= \SI{-750(70)}{\per\second\per\centi\meter}\\
+  b_1 &= \SI{1,47(11)}{\per\milli\second}\\
+  m_2 &= \SI{,610(50)}{\per\second\per\centi\meter}\\
+  b_2 &= \SI{1,31(9)}{\per\milli\second}
+\end{align*}
+Daraus folgt für die mittleren Reichweiten $\overline{x}$:
+\begin{align*}
+  \frac{R_1}{2} &= \SI{328,95}{\per\second}\\
+  \overline{x}_1 &= \SI{15,3}{\milli\meter} \\
+  \frac{R_2}{2} &= \SI{262,54}{\per\second}\\
+  \overline{x}_2 &= \SI{17,3}{\milli\meter} \\
+\end{align*}
+Aus den mittleren Reichweiten lassen sich die Energien mittels der Formel
+\begin{equation*}
+  E = \left(\frac{\overline{x}}{3.1} \right)^{\frac{2}{3}}
+\end{equation*}
+berechenen, wobei $\overline{x}$ in \si{\milli\meter} und $E$ in \si{\mega\eV} angegeben wird. Daraus folgt für die Energien
+\begin{align*}
+  E_1= \SI{2,899}{\mega\eV} \\
+  E_2= \SI{3,146}{\mega\eV}
+\end{align*}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{Messung1a.pdf}
+  \caption{Rate $R$ in Abhängikeit der effektiven Reichweite $x$ für $x_0=\SI{2}{\centi\meter}$.}
+  \label{abb:2}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{Messung2a.pdf}
+  \caption{Rate $R$ in Abhängikeit der effektiven Reichweite $x$ für $x_0=\SI{2,5}{\centi\meter}$.}
+  \label{abb:3}
+\end{figure}
 \begin{table}
   \centering
   \caption{Messwerte: Reichweite der Alpha-Strahlung bei $x_0=2 \, \mathrm{cm}$}
   \label{tab:1}
   \begin{tabular}{c c c c c}
     \toprule
-    Druck & Counts & Channel & alle Counts & Enerige \\
+    Druck & Counts & Channel & Pulses detected & Enerige \\
     $p$ / \si{\milli\bar} & $N$ & $C$ & $N_{\symup{gesamt}}$ & $E$ / \si{\mega\eV} \\
     \midrule
-    0 & 212 & 951 & 78949 & 4.00 \\
-    50 & 219 & 879 & 75793 & 3.70 \\
-    100 & 223 & 852 & 75596 & 3.58 \\
-    150 & 227 & 822 & 74744 & 3.46 \\
-    200 & 239 & 795 & 73799 & 3.34 \\
-    250 & 246 & 769 & 72949 & 3.23 \\
-    300 & 263 & 742 & 72668 & 3.12 \\
-    350 & 281 & 726 & 72257 & 3.05 \\
-    400 & 272 & 699 & 71129 & 2.94 \\
-    450 & 280 & 650 & 68861 & 2.73 \\
-    500 & 297 & 633 & 66846 & 2.66 \\
-    550 & 309 & 612 & 66164 & 2.57 \\
-    600 & 314 & 579 & 63336 & 2.44 \\
-    650 & 331 & 558 & 59725 & 2.35 \\
-    700 & 329 & 505 & 53819 & 2.12 \\
-    750 & 334 & 472 & 44985 & 1.99 \\
-    800 & 344 & 457 & 36568 & 1.92 \\
-    850 & 299 & 444 & 22941 & 1.87 \\
-    900 & 195 & 443 & 12352 & 1.86 \\
-    950 & 189 & 440 & 8248 & 1.85 \\
-    1000 & 55 & 441 & 2060 & 1.85 \\
+    0 & 212 & 951 & 78949 & 4,00 \\
+    50 & 219 & 879 & 75793 & 3,70 \\
+    100 & 223 & 852 & 75596 & 3,58 \\
+    150 & 227 & 822 & 74744 & 3,46 \\
+    200 & 239 & 795 & 73799 & 3,34 \\
+    250 & 246 & 769 & 72949 & 3,23 \\
+    300 & 263 & 742 & 72668 & 3,12 \\
+    350 & 281 & 726 & 72257 & 3,05 \\
+    400 & 272 & 699 & 71129 & 2,94 \\
+    450 & 280 & 650 & 68861 & 2,73 \\
+    500 & 297 & 633 & 66846 & 2,66 \\
+    550 & 309 & 612 & 66164 & 2,57 \\
+    600 & 314 & 579 & 63336 & 2,44 \\
+    650 & 331 & 558 & 59725 & 2,35 \\
+    700 & 329 & 505 & 53819 & 2,12 \\
+    750 & 334 & 472 & 44985 & 1,99 \\
+    800 & 344 & 457 & 36568 & 1,92 \\
+    850 & 299 & 444 & 22941 & 1,87 \\
+    900 & 195 & 443 & 12352 & 1,86 \\
+    950 & 189 & 440 & 8248 & 1,85 \\
+    1000 & 55 & 441 & 2060 & 1,85 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -123,7 +192,7 @@ die
   \label{tab:2}
   \begin{tabular}{c c c c}
     \toprule
-    Druck & Counts & Channel & alle Counts \\
+    Druck & Counts & Channel & Pulses detected \\
     $p$ / \si{\milli\bar} & $N$ & $C$ & $N_{\symup{gesamt}}$ \\
     \midrule
     0 & 174 & 904 & 63009 \\
@@ -152,7 +221,14 @@ die
 \end{table}
 
 \subsection{Statistik}
-
+Zur Überprüfung der Statistik werden 100 Messwerte in einer Zeitdauer von $\symup\Delta t= \SI{10}{\second}$ aufgenommen, diese Messwerte sind in
+Tabelle \ref{tab:3} aufgelsitet.
+Zur Berechnung des Mittelwertes und die Standardabweichung wird wie folgt berechnet:
+\begin{align*}
+  \overline{N} &= \frac{\sum\limits_{i=1}^{100} N_i}{100} = 5156,14 \\
+  \sigma_N &= \sqrt{\frac{\sum\limits_{i=1}^{100}(N_i-\overline{N})}{100}} = 206,16
+\end{align*}
+Das Histogramm der Messwerte und der Verteilungen (Poisson- und Normalverteilung) sind in Abbildung \ref{abb:4} dargestellt.
 \begin{table}
   \centering
   \caption{Statistik.}
@@ -189,3 +265,11 @@ die
     \bottomrule
   \end{tabular}
 \end{table}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{Statistik.pdf}
+  \caption{Messwerte mit einer Poisson- und einer Normalverteilung.}
+  \label{abb:4}
+\end{figure}
+
+\section{Diskussion}
