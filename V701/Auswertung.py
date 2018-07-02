@@ -10,27 +10,28 @@ import scipy
 
 p1, N1, C1, N1_g = np.genfromtxt('Messung1.txt', unpack=True)
 #hier werden die Werte eingelesen: Druck, Counts, Channel, impulses detectet
-p2, N2, C2, N2_g = np.genfromtxt('Messung2.txt', unpack=True)
-N3 = np.genfromtxt('Messung3.txt', unpack=True)
+p2, N2, C2, N2_g = np.genfromtxt('Messung2.txt', unpack=True) #zweite Messung mit anderem Abstand
+N3 = np.genfromtxt('Messung3.txt', unpack=True) #Statistikmessung
 
 #Plot1a x:Reichweite y:Zählrate____________________________________________________
 plt.figure(1)
-x1_0 = 2 #Abstand der Quelle und des Detektors (vielleicht ändern)
+x1_0 = 2 #Abstand der Quelle und des Detektors (vielleicht ändern), in cm
 p_0= 1013.25
 
 x1 = x1_0 * p1/p_0
-r1=N1_g/120 #120 ist das Zeitintervall der Messung (vielleicht ändern)
+r1=N1_g/120
 
 L1plot = np.linspace(1.25, 2) #musst du nur noch anpassen
 def f1(x1, s1, b1):
     return x1*s1+b1
 paramsI, covarianceI = curve_fit(f1, x1[15:], r1[15:]) #hier wird durch die eckige Klammer nur ein Teil der Werte genommen (von Wert 15 bis Ende)
+#musst du dann bei dir gucken, welche Werte du davon alle nimmst für die lineare Regression
 errorsI = np.sqrt(np.diag(covarianceI))
 b1 = ufloat(paramsI[1], errorsI[1])
 s1 = ufloat(paramsI[0], errorsI[0])
-print('Steigung und y-Achsenabschnitt')
-print(s1)
-print(b1)
+print('1. MESSUNG (x:Reichweite, y: Zählrate)')
+print('Steigung der linReg:', s1)
+print('y-Achsenabschnitt der linReg:', b1)
 
 plt.plot(L1plot, f1(L1plot, *paramsI) , 'g-', label="Lineare Regression")
 plt.plot(x1, r1, 'b.', label = 'Messwerte')
@@ -43,8 +44,8 @@ plt.tight_layout()
 plt.legend(loc="best")
 plt.savefig('Messung1a.pdf')
 
-EX1=(15.3/3.1)**(2/3)#Energiewert muss angepasst werden: x-Wert der vertikalen Liniee in mm (nicht cm!))
-print('EX1:', EX1, 'MeV')
+EX1=(15.3/3.1)**(2/3)#mittlere Reichweite muss angepasst werden (also statt 15.3): x-Wert der vertikalen Linie in mm (nicht cm!))
+print('Energie der mittleren Reichweite:', EX1, 'MeV')
 
 #Plot1b x:Druck y:Energie_________________________________________________________
 plt.figure(2)
@@ -64,11 +65,34 @@ plt.ylabel(r"$E / \mathrm{MeV}$")
 plt.tight_layout()
 plt.legend(loc="best")
 plt.savefig('Messung1b.pdf')
-print('m1: ', m1)
-print('n1: ', n1)
+print()
+print('1. MESSUNG (x:Druck, y:Energie)')
+print('Steigung der linReg: ', m1)
+print('y-Achsenabschnitt der linReg: ', n1)
 
-#Plot2a x:Reichweite y:Counts_____________________________________________________
+#Plot1c (Energieverlust) x:mittlereReichweite y: Energie__________________________________________________
 plt.figure(3)
+L1plot = np.linspace(0, 2)
+def f1(x1, m3, n3):
+    return x1*m3+n3
+paramsI, covarianceI = curve_fit(f1, x1, E1)
+errorsI = np.sqrt(np.diag(covarianceI))
+n3 = ufloat(paramsI[1], errorsI[1])
+m3 = ufloat(paramsI[0], errorsI[0])
+plt.plot(L1plot, f1(L1plot, *paramsI) , 'g-', label="Lineare Regression")
+plt.plot(x1, E1, 'b.', label='Messwerte')
+plt.xlabel(r"$x / \mathrm{cm}$")
+plt.ylabel(r"$E / \mathrm{MeV}$")
+plt.tight_layout()
+plt.legend(loc="best")
+plt.savefig('Messung1c.pdf')
+print()
+print('1.MESSUNG (x:effektiveLänge, y:Energie)')
+print('Energieverlust(-dE/dx)', -m3)
+print('y-Achsenabschnitt: ', n3)
+
+#Plot2a x:Reichweite y:Zählrate____________________________________________________
+plt.figure(4)
 x2_0 = 2.5 #das muss wieder ggf angepasst werden, (Abstand Quelle-Detektor)
 p_0= 1013.25
 
@@ -82,10 +106,10 @@ paramsI, covarianceI = curve_fit(f1, x2[12:19], r2[12:19]) #hier wird wieder nur
 errorsI = np.sqrt(np.diag(covarianceI))
 b2 = ufloat(paramsI[1], errorsI[1])
 s2 = ufloat(paramsI[0], errorsI[0])
-
-print('Steigung und y-Achsenabschnitt')
-print(s2)
-print(b2)
+print()
+print('2. MESSUNG (x:Reichweite, y:Zählrate)')
+print('Steigung der linReg:', s2)
+print('y-Achsenabschnitt der linReg:', b2)
 plt.plot(L1plot, f1(L1plot, *paramsI) , 'g-', label="Lineare Regression")
 
 plt.plot(x2, r2, 'b.', label = 'Messwerte')
@@ -98,16 +122,17 @@ plt.tight_layout()
 plt.legend(loc="best")
 plt.savefig('Messung2a.pdf')
 EX2=(17.3/3.1)**(2/3) #Auch hier muss mittlere Reichweite angegeben werden(in mm)
-print('EX2:', EX2, 'MeV')
+print('Energie der mittleren Reichweite:', EX2, 'MeV')
 
 #Histogramm mit Verteilungen
-plt.figure(4)
-
+plt.figure(5)
+print()
+print('STATISTIK:')
 t = np.linspace(4700, 5700) #hier musst du nur deinen Linspace und ggf die Anzahl der bins verändern
 nu = sum(N3)/100
-print('Mittelwert(N3): ', nu)
+print('Mittelwert: ', nu)
 sigma = (sum((N3-nu)**2)/(100))**(1/2)
-print('Abweichung(N3): ', sigma)
+print('Abweichung: ', sigma)
 plt.hist(N3,  bins=18, normed=True, label='Messwerte')
 p_p= np.random.poisson(nu, 10000)
 plt.hist(p_p, bins=18, color='g', alpha=0.5, normed=True, label='Poissonverteilung')
@@ -117,6 +142,7 @@ plt.legend(loc="best")
 plt.xlabel(r"$Counts$")
 plt.ylabel(r"$p(Counts)$")
 plt.savefig('Statistik.pdf')
+
 
 
 #tabellen erstellen
