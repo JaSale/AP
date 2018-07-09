@@ -119,3 +119,176 @@ Nulllinie spielt keine Rolle, da nur die Winkeldifferenzen von Bedeutung sind.
 \end{figure}
 
 \section{Auswertung}
+\subsection{Bestimmung des Winkels $\varphi$}
+Im ersten Teil des Versuchs wird der brechende Winkel $\varphi$ bestimmt. Dies geschieht, indem die beiden reflektierten Strahlen
+$\varphi_{\symup{l}}$ und $\varphi_{\symup{r}}$ gemessen werden. Die Messergebnisse sind zusammen mit den nach Formel \ref{eq:1} berechneten
+Werten für den brechenden Winkel in Tabelle \ref{tab1} zu sehen.
+Die Mittelung der sieben Messwerte, sowie der zugehörige Fehler für die Mittelung werden mit Hilfe folgender Formeln berechnet:
+\FloatBarrier
+\begin{align*}
+  \bar{\varphi} &= \frac{1}{n} \sum_{1}^{7}{\varphi_n}  \\
+  \upsigma = \frac{1}{\sqrt{n}} \sqrt{\frac{\sum{(\varphi_n - \bar{\varphi})^2}}{n-1} }
+\end{align*}
+\FloatBarrier
+\begin{table}
+\centering
+\caption{Messwerte und Ergebnisse zur Ermittlung von $\varphi$}
+\label{tab1}
+\begin{tabular}{ c c c c }
+\toprule
+{Messung} & {$\varphi_{symup{l}}$} / $\si{\degree}$ } & { $\varphi_{symup{r}}$} / $\si{\degree}$ } & { $\varphi$} / $\si{\degree}$ } \\
+\midrule
+ 1 & 69,6   &   189,6   &   60,00   \\
+ 2 & 71,1   &   191,2   &   60,05   \\
+ 3 & 68,9   &   189,0   &   60,05   \\
+ 4 & 63,0   &   183,0   &   60,00   \\
+ 5 & 63,5   &   183,6   &   60,05   \\
+ 6 & 61,0   &   180,9   &   60,05   \\
+ 7 & 62,6   &   182,6   &   60,00   \\
+\bottomrule
+\end{tabular}
+\end{table}
+Für $\bar{varphi}$ ergibt sich ein Wert von $\SI{60,03(1)}{\degree}$.
+\subsection{Bestimmtung des Winkels $\upeta$ und der Brechungsindizes n}
+\noindent Im darauffolgenden Teil des Versuchs wird der Winkel $\upeta$, sowie die Brechungsindizes für die verschiedenen Wellenlängen berechnet.
+Die hierfür benötigten Werte sind in Tabelle \ref{tab2} zu sehen.
+\begin{table}
+\centering
+\caption{Messwerte zur Bestimmung von $\upeta$ und n}
+\label{tab2}
+\begin{tabular}{ c c c c c }
+\toprule
+{Wellenlänge} & {$\Omega_{l}$ / $\si{\degree}$ } & { $\Omega_{r}$ / $\si{\degree}$ } & { $\upeta$ } & { n }\\
+\midrule
+ 643,84     &     192,0     &     70,0      &      58,0     &     1.71383 \pm 0.00017     \\
+ 576,96     &     191,7     &     70,5      &      58,8     &     1.72097 \pm 0.00017     \\
+ 546,07     &     191,3     &     70,7      &      59,4     &     1.72627 \pm 0.00017     \\
+ 508,58     &     190,9     &     71,2      &      60,3     &     1.73414 \pm 0.00017     \\
+ 479,99     &     190,5     &     71,7      &      61,2     &     1.74189 \pm 0.00017     \\
+ 467,81     &     190,3     &     71,8      &      61,5     &     1.74446 \pm 0.00017     \\
+ 435,83     &     189,8     &     72,4      &      62,6     &     1.75375 \pm 0.00017     \\
+\bottomrule
+\end{tabular}
+\end{table}
+Die Brechungsindizes n werden mit Hilfe folgender Formel berechnet:
+\begin{align*}
+  \symup{n} = \frac{\symup{sin}(\frac{\upeta + \varphi}{2})}{\symup{sin}(\frac{\varphi}{2})}
+\end{align*}
+Der zugehörige Fehler berechnet sich mit
+\begin{align*}
+  \Delta \symup{n} = \bigg\vert\bigg(\frac{0,5 \symup{cos}(\frac{n+\varphi}{2})}{\symup{sin}(\frac{\varphi}{2})} - \frac{0,5 \symup{cos}(\frac{\varphi}{2})\symup{sin}(\frac{n+\varphi}{2})}{\symup{sin^2}(\frac{\varphi}{2})}\bigg)\Delta \varphi\bigg\vert  .
+\end{align*}
+\FloatBarrier
+\subsection{Ermittlung der Dispersionsgleichung}
+\noindent Im folgenden wird untersucht, welche Theoriekurve zur Ermittlung der Dispersionsgleichung genauer den genommenen Messwerten entspricht.
+In Abbildung \ref{abb1} sind die quadrierten Brechungsindizes $\symup{n}^2$ gegen ihre Wellenlängen aufgetragen. In derselben Abbildung sind
+die beiden Theoriekurven zu sehen. Es deutet sich an, dass Theoriekurve 1 die Messwerte genauer trifft als Theoriekurve 2.
+Die mit Hilfe der Theoriekurven ermittelten ersten beiden Koeffizienten für die Dispersionsgleichungen 1) und 2) sind in Tabelle \ref{tab3}
+zu sehen.
+\FloatBarrier
+\begin{table}
+\centering
+\caption{Koeffizienten der Dispersionsgleichung.}
+\label{tab:disp}
+\begin{tabular}{ c | c c }
+\toprule
+{Dispersionskurve} & & {Steigung} \\
+\midrule
+  1 & & $\symup{A_0}$ & $\num{2,812(5)}$      \\
+      & $\symup{A_2}$ & $\num{5,05(13)E4}$    \\
+  2 & & $\symuup{A_0'}$ & $\num{3,165(14)}$   \\
+      &$\symup{A_2'}$ & $\num{5,8(5)E-7}$     \\
+\bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
+Mit Hilfe der ermittelten Koeffizienten lassen sich nun die Abweichungsquadrate berechnen:
+\begin{align*}
+  \symup{s}_{\symup{n}}^2 &= \frac{1}{5} \sum\limits_{i=1}^{7} \left( \symup{n}^2( \lambda_{\symup{i}} ) - \symup{A_0} - \frac{\symup{A_{2}}}{\lambda_{\symup{i}}^2} \right)^2  \\
+  \symup{s}_{\symup{n'}}^2 &= \frac{1}{5} \sum\limits_{i=1}^{7} \left( \symup{n'}^2( \lambda_{\symup{i}} ) - \symup{A_0'} + \symup{A_{2}'} \lamda^2 \right)^2
+\end{align*}
+Es wird der Gleichung die Gültigkeit zugesprochen, die ein kleineres $\symup{s}^2$ besitzt.
+Die Abweichung für $\symup{s}_{\symup{n}}$ beträgt $\SI{6,2(25)E-6}{}$, wohingegen die Abweichung für $\symup{s}_{\symup{n'}}$ $\SI{190(70)E-6}$ beträgt.
+Dies lässt darauf schließen, dass die Theoriekurve 1 den Messwerten exakter entspricht.
+Somit ergibt sich für den Brechungsindex des verwendeten Glasprismas in Abhängigkeit von der Wellenlänge folgende Gleichung:
+\begin{align*}
+  \symup{n}(\lambda) = \sqrt{ \symup{A_0} + \frac{\symup{A_2}}{\lambda ^2} }
+\end{align*}
+\FloatBarrier
+\subsection{Berechnung der Abbe'schen Zahl}
+Mit Hilfe dieser Gleichung lässt sich die Abbesche Zahl einfach über folgende Formel berechnen:
+\begin{align*}
+  \nu = \frac{\symup{n}_\symup{D} - 1}{\symup{n}_\symup{F} - \symup{n}_\symup{C}}
+\end{align*}
+\FloatBarrier
+Hierbei sind die Wellenlängen für die Frauenhoferschen Linien wie folgt angegeben:
+\begin{align*}
+  \lambda_\symup{D} &= \SI{589}{\nano \metre} \\
+  \lambda_\symup{F} &= \SI{486}{\nano \metre} \\
+  \lambda_\symup{C} &= \SI{656}{\nano \metre}
+\end{align*}
+Folglich ergibt sich eine Abbe'sche Zahl von $\SI{25,8(6)}{}$. Der Fehler für die Abbe'sche Zahl entsteht dadurch, dass in der Berechnung der
+Brechungsindizes fehlerbehaftete Größen vorkommen, weshalb diese ebenfalls wieder fehlerbehaftet sind. Die Fehler für die Brechungsindizes werden
+mittels Gauß'scher Fehlerfortpflanzung berechnet. Folglich ergeben sich folgende Werte für die Brechungsindizes:
+\begin{align*}
+  \symup{n}_\symup{D} &= \SI{1,7198(18)}{\nano \metre} \\
+  \symup{n}_\symup{F} &= \SI{1,7395(21)}{\nano \metre} \\
+  \symup{n}_\symup{C} &= \SI{1,7115(17)}{\nano \metre}
+\end{align*}
+
+\subsection{Auflösevermögen}
+Das Auflösevermögen beschreibt den minimalen Wellenlängenunterschied $\Delta \lambda$, der zwischen zwei Spektrallinien liegen darf, damit sie
+vom Gerät gerade noch getrennt werden können.
+Es ist definiert als:
+\FloatBarrier
+\begin{align*}
+  \symup{A} := \frac{\lambda}{\Delta{\lambda}}
+\end{align*}
+Woraus dann die Formel zur Berechnung des Auflösevermögens folgt:
+\FloatBarrier
+\begin{align*}
+  \symup{A} &= \symup{b} \frac{\symup{dn}}{\symup{d}\lambda}
+            &= -\symup{b} \frac{\symup{A_2}}{\sqrt{\symup{A_0} + \frac{\symup{A_2}}{\lambda^2}}\lambda^3}
+\end{align*}
+Da auch hier wieder fehlerbehaftete Größen zur Berechnung verwendet werden, muss die Gauß'sche Fehlerfortpflanzung beachtet werden und es wird
+der Fehler von A mittels folgender Formel berechnet:
+\begin{align*}
+  \Delta{A}= \sqrt{\left[\left(-\frac{\symup{bA_2}}{\lambda^3}\cdot0,5\left(\symup{A_0}+ \frac{\symup{A_2}}{\lambda^2}\right)^{-\frac{3}{2}}\right)\Delta{A_0}\right]^2+\left[\frac{\symup{b}}{\lambda^3}\left(\symup{A_0}+\frac{\symup{A_2}}{\lambda^2}\right)^{-\frac{1}{2}}\cdot\left(\frac{-\symup{A_2}}{2\lambda^2}\left(\symup{A_0}+\frac{\symup{A_2}}{\lambda^2}\right)^{-1}+1\right)\right]^2}
+\end{align*}
+
+\noindent Für die drei zuvor verwendeten Frauenhofer'schen Linien ergeben sich, die in Tabelle \ref{tab3} zu sehenden Ergebnisse für das
+Auflösungsvermögen.
+\FloatBarrier
+\begin{table}
+\centering
+\caption{Auflösevermögen für die Fraunhoferschen Linien.}
+\label{tab3}
+\begin{tabular}{ c c c }
+\toprule
+{ Fraunhofer'sche Linie } & { $\lambda}$ / $\si{\nano \metre}$ } & { Auflösevermögen } \\
+\midrule
+ $\lambda_{\symup{C}}$ & 656 & $\SI{3140(80)}{} $     \\
+ $\lambda_{\symup{D}}$ & 589 & $\SI{4310(110)}{}$     \\
+ $\lambda_{\symup{F}}$ & 486 & $\SI{7590(190)}{}$     \\
+ \bottomrule
+\end{tabular}
+\end{table}
+\FloatBarrier
+\subsection{Bestimmung der nächstgelegenen Absorptionsstelle}
+Um die nächstgelegene Absorptionsstelle zu ermitteln, wird ein Koeffizientenvergleich der beiden Gleichungen \ref{eq1} und \ref{eq2} durchgeführt:
+\begin{align*}
+  \lambda_1 = \sqrt{\frac{\symup{A_2}}{\symup{A_0} -1}}.
+\end{align*}
+Der zugehörige fehler berechnet sich mittels folgender Formel:
+\begin{align*}
+  \Delta{\lambda} = \sqrt{\left(\frac{1}{2}\left(\frac{\symup{A_2}}{\symup{A_0}-1}\right)^{-\frac{1}{2}}\frac{1}{\symup{A_0}-1}\Delta{A_2}\right)^2 + \left(\frac{1}{2}\left(\frac{\symup{A_2}}{\symup{A_0}-1}\right)^{-\frac{1}{2}}\frac{{-\symup{A_2}}}{(\symup{A_0}-1)^2}\Delta{A_0}\bigg)^2}.
+\end{align*}
+Somit ergibt sich für die nächstgelegene Absorptionsstelle eine Wellenlänge von $\SI{166,9(22)}{\nano \metre}$.
+Diese Wellenlänge liegt im stark ultravioletten Bereich \cite{Q2}.
+\section{Diskussion}
+Die Bestimmung des brechenden Winkels $\varphi$ = $\SI{60,03(1)}{\degree}$ weist eine sehr geringe Abweichung von $\SI{0,05}{\percent}$ auf,
+was im Rahmen der Messungenauigkeit liegt.
+Bei der Ermittlung des Winkels $\upeta$ konnten leicht Fehler geschehen. So war es recht schwer zu erkennen, wann die reflektierte Linie über
+den zu vergleichenden Spektrallinien lag, weil sich diese durch das Vertsellen des Goniometers leicht verschieben ließen.
+Das Verhalten der normalen Dispersion ist jedoch deutlich zu erkennen. Bei abnehmenden Wellenlängen steigen die Brechungsindizes an.
+Der Brechungsindex des Materials SF14 beträgt 
